@@ -133,19 +133,23 @@ const careerTracks = [
 const projects = [
   {
     title: 'SLIET Mentorship Platform',
+    label: 'Mentorship Product',
     description:
       'Developed a mentorship platform for student-faculty interaction with clean booking flows, responsive layout, and reusable frontend components.',
     stack: ['React', 'Next.js', 'Responsive UI'],
     live: 'https://sliet-mentorship-platform.vercel.app/',
     code: githubProfile,
+    previewClass: 'project-preview-mentor',
   },
   {
     title: 'BolYaar',
+    label: 'Social Platform',
     description:
       'Built as a collaborative student social platform featuring anonymous posts, polls, and realtime interactions with Firebase integration.',
     stack: ['React', 'Firebase', 'Realtime'],
     live: githubProfile,
     code: githubProfile,
+    previewClass: 'project-preview-social',
   },
 ]
 
@@ -255,6 +259,56 @@ function App() {
     )
 
     animatedItems.forEach((item) => observer.observe(item))
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const educationItems = document.querySelectorAll('.education-reveal')
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return
+          }
+
+          entry.target.classList.add('is-visible')
+          observer.unobserve(entry.target)
+        })
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px',
+      },
+    )
+
+    educationItems.forEach((item) => observer.observe(item))
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const sectionItems = document.querySelectorAll('.scroll-reveal')
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return
+          }
+
+          entry.target.classList.add('is-visible')
+          observer.unobserve(entry.target)
+        })
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -10% 0px',
+      },
+    )
+
+    sectionItems.forEach((item) => observer.observe(item))
 
     return () => observer.disconnect()
   }, [])
@@ -396,7 +450,7 @@ function App() {
         <div className="education-timeline">
           {educationItems.map((item, index) => (
             <article
-              className={`education-card reveal ${index % 2 === 0 ? 'education-left' : 'education-right'}`}
+              className={`education-card education-reveal ${index % 2 === 0 ? 'education-left education-reveal-left' : 'education-right education-reveal-right'}`}
               key={item.title}
             >
               <h3>{item.title}</h3>
@@ -478,11 +532,23 @@ function App() {
 
         <div className="project-grid">
           {projects.map((project) => (
-            <article className="project-card reveal" key={project.title}>
+            <article className="project-card scroll-reveal" key={project.title}>
               <div className="project-preview">
-                <div className="project-preview-bar" />
-                <div className="project-preview-screen">
-                  <span>{project.title}</span>
+                <div className={`project-preview-screen ${project.previewClass}`}>
+                  <div className="project-preview-overlay" />
+                  <div className="project-preview-ui">
+                    <span className="project-preview-chip">{project.label}</span>
+                    <div className="project-preview-bar" />
+                    <div className="project-preview-lines">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                  </div>
+                  <div className="project-preview-content">
+                    <strong>{project.title}</strong>
+                    <span>{project.stack.join(' • ')}</span>
+                  </div>
                 </div>
               </div>
               <div className="project-body">
@@ -515,7 +581,7 @@ function App() {
 
         <div className="experience-list">
           {experiences.map((item) => (
-            <article className="experience-card reveal" key={item.role}>
+            <article className="experience-card scroll-reveal" key={item.role}>
               <div className="experience-period">{item.period}</div>
               <div className="experience-body">
                 <div className="experience-head">
@@ -539,7 +605,7 @@ function App() {
         </div>
 
         <div className="contact-layout">
-          <form className="contact-form reveal">
+          <form className="contact-form scroll-reveal">
             <h3>Send Me a Message</h3>
             <input type="text" placeholder="Your Name" />
             <input type="email" placeholder="Your Email" />
@@ -549,7 +615,7 @@ function App() {
           </form>
 
           <div className="contact-side">
-            <article className="contact-card reveal">
+            <article className="contact-card scroll-reveal">
               <h3>Contact Information</h3>
               <div className="contact-info">
                 <div>
@@ -567,7 +633,7 @@ function App() {
               </div>
             </article>
 
-            <article className="contact-card reveal">
+            <article className="contact-card scroll-reveal">
               <h3>Availability</h3>
               <p>Available for internships, freelance work, and full-time roles.</p>
               <div className="availability-row">
@@ -600,6 +666,10 @@ function App() {
               <img src={item.logo} alt="" className="social-logo-image" />
             </a>
           ))}
+        </div>
+        <div className="footer-policy-links">
+          <a href="#contact">Privacy Policy</a>
+          <a href="#contact">Terms of Service</a>
         </div>
         <p className="footer-copyright">
           © 2026 Mohd Kapeel. All rights reserved.
