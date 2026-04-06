@@ -1091,11 +1091,13 @@
   overflow: hidden;
   min-height: 100%;
   border-radius: 20px;
+  position: relative;
 }
 
 .project-preview {
   padding: 20px 20px 0;
   background: linear-gradient(180deg, rgba(3, 11, 25, 0.98), rgba(14, 19, 31, 0.95));
+  transition: transform 220ms ease, filter 220ms ease;
 }
 
 .project-preview-bar {
@@ -1117,6 +1119,7 @@
   color: #7fa5ff;
   font-size: 1.25rem;
   font-weight: 700;
+  transition: transform 240ms ease, box-shadow 240ms ease, color 240ms ease;
 }
 
 .project-body {
@@ -1157,6 +1160,34 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
   color: #e2eaff;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.project-card:hover {
+  border-color: rgba(106, 151, 255, 0.34);
+  box-shadow:
+    0 20px 56px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(95, 139, 255, 0.12);
+}
+
+.project-card:hover .project-preview {
+  transform: translateY(-2px);
+  filter: saturate(1.08);
+}
+
+.project-card:hover .project-preview-screen {
+  transform: scale(1.03);
+  box-shadow: inset 0 0 0 1px rgba(122, 157, 255, 0.15);
+  color: #b6caff;
+}
+
+.project-links a:hover {
+  transform: translateY(-2px);
+  background: rgba(84, 122, 255, 0.16);
+  box-shadow: 0 10px 24px rgba(63, 108, 255, 0.16);
 }
 
 .experience-list {
@@ -1600,27 +1631,27 @@
   }
 
   .hex-grid {
-    grid-template-columns: repeat(2, 148px);
-    gap: 6px 10px;
+    grid-template-columns: repeat(2, 132px);
+    gap: 2px 6px;
   }
 
   .hex-skill {
-    width: 148px;
-    height: 134px;
+    width: 132px;
+    height: 120px;
   }
 
   .hex-skill:nth-child(n + 3),
   .hex-skill:nth-child(n + 4),
   .hex-skill:nth-child(n + 5),
   .hex-skill:nth-child(n + 6) {
-    --hex-shift: 74px;
+    --hex-shift: 67px;
   }
 
   .hex-skill:nth-child(n + 3):hover,
   .hex-skill:nth-child(n + 4):hover,
   .hex-skill:nth-child(n + 5):hover,
   .hex-skill:nth-child(n + 6):hover {
-    transform: translateX(74px) translateY(-4px) scale(1.03);
+    transform: translateX(67px) translateY(-4px) scale(1.03);
   }
 }
 
@@ -1658,43 +1689,47 @@
     width: 100%;
   }
 
-  .hex-skill {
-    width: 144px;
-    height: 130px;
+  .hex-grid {
+    grid-template-columns: repeat(2, 116px);
+    gap: 0 2px;
+    margin-top: 28px;
   }
 
-  .hex-grid {
-    grid-template-columns: repeat(2, 144px);
-    gap: 6px 8px;
+  .hex-skill {
+    width: 116px;
+    height: 106px;
+    padding: 10px 10px 12px;
   }
 
   .hex-skill:nth-child(n + 3),
   .hex-skill:nth-child(n + 4),
   .hex-skill:nth-child(n + 5),
   .hex-skill:nth-child(n + 6) {
-    --hex-shift: 72px;
+    --hex-shift: 59px;
   }
 
   .hex-skill:nth-child(n + 3):hover,
   .hex-skill:nth-child(n + 4):hover,
   .hex-skill:nth-child(n + 5):hover,
   .hex-skill:nth-child(n + 6):hover {
-    transform: translateX(72px) translateY(-4px) scale(1.03);
+    transform: translateX(59px) translateY(-4px) scale(1.03);
   }
 
   .hex-skill span {
-    font-size: 0.8rem;
+    max-width: 74px;
+    font-size: 0.68rem;
+    line-height: 1.2;
   }
 
   .skill-logo {
-    width: 52px;
-    height: 52px;
-    margin-bottom: 10px;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 7px;
   }
 
   .skill-logo-image {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
   }
 
   .photo-frame {
@@ -1721,16 +1756,55 @@
   }
 
   .education-timeline {
-    padding-bottom: 94px;
+    gap: 18px;
+    padding: 8px 0 82px;
+  }
+
+  .education-timeline::before {
+    left: 12px;
   }
 
   .education-card {
-    width: calc(100% - 34px);
-    padding: 20px;
+    width: calc(100% - 22px);
+    padding: 18px 18px 18px 20px;
+    border-radius: 18px;
+  }
+
+  .education-card::after {
+    top: 24px;
+    left: -18px;
+    width: 10px;
+    height: 10px;
   }
 
   .education-meta {
     gap: 10px;
+    font-size: 0.88rem;
+  }
+
+  .education-card h3 {
+    font-size: 1.08rem;
+  }
+
+  .timeline-end-orbit {
+    left: 12px;
+    bottom: 0;
+    width: 64px;
+    height: 64px;
+    transform: none;
+    justify-content: start;
+  }
+
+  .timeline-end-sliet {
+    width: 64px;
+    height: 64px;
+    background-size: 8px 8px;
+  }
+
+  .timeline-sliet-badge {
+    width: 38px;
+    height: 38px;
+    font-size: 0.45rem;
   }
 
   .project-preview-screen {
