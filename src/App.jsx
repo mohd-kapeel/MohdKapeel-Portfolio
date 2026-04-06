@@ -234,6 +234,31 @@ function App() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  useEffect(() => {
+    const animatedItems = document.querySelectorAll('.skill-reveal')
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return
+          }
+
+          entry.target.classList.add('is-visible')
+          observer.unobserve(entry.target)
+        })
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    )
+
+    animatedItems.forEach((item) => observer.observe(item))
+
+    return () => observer.disconnect()
+  }, [])
+
   const currentCareer = careerTracks[activeCareer]
   return (
     <main className="portfolio-shell">
@@ -339,8 +364,11 @@ function App() {
                 <div className="skill-group reveal" key={group.title}>
                   <h3 className={`group-title group-title-${group.accent}`}>{group.title}</h3>
                   <div className="hex-grid">
-                    {group.items.map((item) => (
-                      <article className={`hex-skill hex-skill-${group.accent}`} key={item.name}>
+                    {group.items.map((item, itemIndex) => (
+                      <article
+                        className={`hex-skill hex-skill-${group.accent} skill-reveal ${itemIndex % 2 === 0 ? 'skill-enter-left' : 'skill-enter-right'}`}
+                        key={item.name}
+                      >
                         <div className={`skill-logo skill-logo-${item.icon}`}>
                           {item.logo ? (
                             <img src={item.logo} alt="" className="skill-logo-image" />

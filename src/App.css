@@ -352,6 +352,7 @@
   min-height: 500px;
   display: grid;
   place-items: center;
+  animation: floatFrame 7s ease-in-out infinite;
 }
 
 .photo-circle {
@@ -363,6 +364,7 @@
   box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.02), 0 0 60px rgba(12, 19, 47, 0.55);
   position: relative;
   z-index: 2;
+  transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
 .photo-circle img {
@@ -382,6 +384,7 @@
   width: 420px;
   height: 420px;
   animation: spinSlow 18s linear infinite;
+  box-shadow: 0 0 26px rgba(102, 137, 255, 0.18);
 }
 
 .orbit-ring-two {
@@ -392,6 +395,7 @@
   border-top-color: transparent;
   border-right-color: transparent;
   animation: spinReverse 16s linear infinite;
+  box-shadow: inset 0 0 24px rgba(63, 108, 255, 0.08);
 }
 
 .orbit-corner {
@@ -549,14 +553,19 @@
     border-color 180ms ease,
     filter 180ms ease;
   margin-top: -8px;
+  --hex-shift: 0px;
+  border: 1px solid rgba(196, 139, 255, 0.42);
+  box-shadow:
+    0 0 0 1px rgba(195, 141, 255, 0.18),
+    0 0 22px rgba(175, 120, 255, 0.14);
 }
 
 .hex-skill:nth-child(n + 5) {
-  transform: translateX(68px);
+  --hex-shift: 68px;
 }
 
 .hex-skill:nth-child(n + 5):hover {
-  transform: translateX(68px) translateY(-4px) scale(1.03);
+  transform: translateX(var(--hex-shift)) translateY(-4px) scale(1.03);
 }
 
 .hex-skill::before {
@@ -564,7 +573,9 @@
   position: absolute;
   inset: 2px;
   clip-path: inherit;
-  background: rgba(11, 13, 20, 0.96);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(113, 82, 199, 0.12), transparent 42%),
+    rgba(11, 13, 20, 0.96);
   z-index: 0;
   transition: background 180ms ease, opacity 180ms ease;
 }
@@ -579,6 +590,23 @@
   z-index: 0;
   transition: opacity 180ms ease, transform 180ms ease;
   transform: scale(0.92);
+}
+
+.skill-reveal {
+  opacity: 0;
+  --skill-offset: 0px;
+}
+
+.skill-enter-left {
+  --skill-offset: -44px;
+}
+
+.skill-enter-right {
+  --skill-offset: 44px;
+}
+
+.skill-reveal.is-visible {
+  animation: skillSlideIn 0.82s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
 }
 
 .hex-skill span {
@@ -619,6 +647,7 @@
 }
 
 .hex-skill:hover {
+  transform: translateX(var(--hex-shift)) translateY(-4px) scale(1.03);
   box-shadow:
     0 0 18px rgba(255, 255, 255, 0.18),
     0 0 30px rgba(205, 162, 255, 0.56),
@@ -1305,6 +1334,30 @@
   font-size: 0.95rem;
 }
 
+.skill-reveal.is-visible:nth-child(1) {
+  animation-delay: 0.02s;
+}
+
+.skill-reveal.is-visible:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.skill-reveal.is-visible:nth-child(3) {
+  animation-delay: 0.14s;
+}
+
+.skill-reveal.is-visible:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.skill-reveal.is-visible:nth-child(5) {
+  animation-delay: 0.26s;
+}
+
+.skill-reveal.is-visible:nth-child(6) {
+  animation-delay: 0.32s;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -1340,6 +1393,27 @@
   }
 }
 
+@keyframes floatFrame {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes skillSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--hex-shift) + var(--skill-offset))) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(var(--hex-shift)) scale(1);
+  }
+}
+
 @media (max-width: 1120px) {
   .hero-section,
   .career-layout,
@@ -1363,11 +1437,11 @@
   }
 
   .hex-skill:nth-child(n + 4) {
-    transform: translateX(70px);
+    --hex-shift: 70px;
   }
 
   .hex-skill:nth-child(n + 5) {
-    transform: none;
+    --hex-shift: 0px;
   }
 
   .hex-skill:nth-child(n + 4):hover {
@@ -1376,6 +1450,14 @@
 
   .hex-skill:nth-child(n + 5):hover {
     transform: translateY(-4px) scale(1.03);
+  }
+
+  .skill-enter-left {
+    --skill-offset: -42px;
+  }
+
+  .skill-enter-right {
+    --skill-offset: 42px;
   }
 
   .hero-section {
@@ -1489,6 +1571,11 @@
     height: 390px;
   }
 
+  .orbit-corner {
+    width: 82px;
+    height: 82px;
+  }
+
   .career-panel,
   .contact-form,
   .contact-card,
@@ -1526,7 +1613,7 @@
   .hex-skill:nth-child(n + 4),
   .hex-skill:nth-child(n + 5),
   .hex-skill:nth-child(n + 6) {
-    transform: translateX(74px);
+    --hex-shift: 74px;
   }
 
   .hex-skill:nth-child(n + 3):hover,
@@ -1585,7 +1672,7 @@
   .hex-skill:nth-child(n + 4),
   .hex-skill:nth-child(n + 5),
   .hex-skill:nth-child(n + 6) {
-    transform: translateX(72px);
+    --hex-shift: 72px;
   }
 
   .hex-skill:nth-child(n + 3):hover,
@@ -1593,6 +1680,44 @@
   .hex-skill:nth-child(n + 5):hover,
   .hex-skill:nth-child(n + 6):hover {
     transform: translateX(72px) translateY(-4px) scale(1.03);
+  }
+
+  .hex-skill span {
+    font-size: 0.8rem;
+  }
+
+  .skill-logo {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 10px;
+  }
+
+  .skill-logo-image {
+    width: 36px;
+    height: 36px;
+  }
+
+  .photo-frame {
+    min-height: 340px;
+  }
+
+  .photo-circle {
+    width: min(82vw, 272px);
+  }
+
+  .orbit-ring-one {
+    width: 310px;
+    height: 310px;
+  }
+
+  .orbit-ring-two {
+    width: 346px;
+    height: 346px;
+  }
+
+  .orbit-corner {
+    width: 70px;
+    height: 70px;
   }
 
   .education-timeline {
@@ -1640,6 +1765,14 @@
   .experience-card:hover {
     transform: none;
   }
+
+  .hex-skill:hover,
+  .hex-skill:nth-child(n + 5):hover,
+  .hex-skill:nth-child(n + 4):hover,
+  .hex-skill:nth-child(n + 3):hover,
+  .hex-skill:nth-child(n + 6):hover {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1650,5 +1783,12 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .skill-reveal,
+  .skill-reveal.is-visible {
+    opacity: 1;
+    animation: none !important;
+    transform: none !important;
   }
 }
