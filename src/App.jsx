@@ -213,6 +213,7 @@ const skillIconMap = {
 function App() {
   const [roleIndex, setRoleIndex] = useState(0)
   const [activeCareer, setActiveCareer] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -220,6 +221,17 @@ function App() {
     }, 2200)
 
     return () => window.clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 860) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   const currentCareer = careerTracks[activeCareer]
@@ -234,9 +246,25 @@ function App() {
         <div className="site-brand">
           Mohd <span>Kapeel</span>
         </div>
-        <nav className="site-nav" aria-label="Primary">
+        <button
+          type="button"
+          className={`menu-toggle ${isMenuOpen ? 'is-open' : ''}`}
+          aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation"
+          aria-label="Toggle navigation menu"
+          onClick={() => setIsMenuOpen((current) => !current)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav
+          className={`site-nav ${isMenuOpen ? 'site-nav-open' : ''}`}
+          aria-label="Primary"
+          id="primary-navigation"
+        >
           {navItems.map(([label, href]) => (
-            <a href={href} key={label}>
+            <a href={href} key={label} onClick={() => setIsMenuOpen(false)}>
               {label}
             </a>
           ))}
