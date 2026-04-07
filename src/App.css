@@ -1934,7 +1934,7 @@
 
   .photo-frame {
     min-height: 360px;
-    animation: none;
+    animation: floatFrame 8s ease-in-out infinite;
   }
 
   .photo-circle {
@@ -1945,14 +1945,14 @@
   .orbit-ring-one {
     width: 340px;
     height: 340px;
-    animation-duration: 26s;
+    animation: spinSlow 28s linear infinite;
     box-shadow: none;
   }
 
   .orbit-ring-two {
     width: 390px;
     height: 390px;
-    animation-duration: 24s;
+    animation: spinReverse 30s linear infinite;
     box-shadow: none;
   }
 
@@ -2015,7 +2015,7 @@
   }
 
   .skill-logo {
-    animation-duration: 4.4s;
+    animation: skillLogoFloat 5.2s ease-in-out infinite;
   }
 
   .education-card,
@@ -2097,14 +2097,20 @@
   }
 
   .skill-logo {
-    animation: none;
+    animation: skillLogoFloat 6s ease-in-out infinite;
   }
 
   .orbit-ring-one,
-  .orbit-ring-two,
-  .timeline-end-sliet,
+  .orbit-ring-two {
+    animation-play-state: running;
+  }
+
+  .timeline-end-sliet {
+    animation: spinSlow 18s linear infinite;
+  }
+
   .availability-dot {
-    animation: none;
+    animation: pulseStatus 3s ease-in-out infinite;
   }
 
   .menu-toggle,
