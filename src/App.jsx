@@ -239,6 +239,55 @@ function App() {
   }, [])
 
   useEffect(() => {
+    const root = document.documentElement
+    let frameId = 0
+    let currentX = window.innerWidth * 0.5
+    let currentY = window.innerHeight * 0.24
+    let targetX = currentX
+    let targetY = currentY
+
+    const applyPointer = () => {
+      currentX += (targetX - currentX) * 0.08
+      currentY += (targetY - currentY) * 0.08
+      root.style.setProperty('--cursor-x', `${currentX}px`)
+      root.style.setProperty('--cursor-y', `${currentY}px`)
+      root.style.setProperty('--cursor-x-ratio', `${currentX / window.innerWidth}`)
+      root.style.setProperty('--cursor-y-ratio', `${currentY / window.innerHeight}`)
+      frameId = window.requestAnimationFrame(applyPointer)
+    }
+
+    const handlePointerMove = (event) => {
+      targetX = event.clientX
+      targetY = event.clientY
+    }
+
+    const handleTouchMove = (event) => {
+      const touch = event.touches[0]
+      if (!touch) {
+        return
+      }
+
+      targetX = touch.clientX
+      targetY = touch.clientY
+    }
+
+    root.style.setProperty('--cursor-x', `${currentX}px`)
+    root.style.setProperty('--cursor-y', `${currentY}px`)
+    root.style.setProperty('--cursor-x-ratio', `${currentX / window.innerWidth}`)
+    root.style.setProperty('--cursor-y-ratio', `${currentY / window.innerHeight}`)
+
+    frameId = window.requestAnimationFrame(applyPointer)
+    window.addEventListener('pointermove', handlePointerMove, { passive: true })
+    window.addEventListener('touchmove', handleTouchMove, { passive: true })
+
+    return () => {
+      window.cancelAnimationFrame(frameId)
+      window.removeEventListener('pointermove', handlePointerMove)
+      window.removeEventListener('touchmove', handleTouchMove)
+    }
+  }, [])
+
+  useEffect(() => {
     const animatedItems = document.querySelectorAll('.skill-reveal')
 
     const observer = new IntersectionObserver(
@@ -316,6 +365,10 @@ function App() {
   const currentCareer = careerTracks[activeCareer]
   return (
     <main className="portfolio-shell">
+      <div className="page-aurora" aria-hidden="true" />
+      <div className="page-cursor-glow" aria-hidden="true" />
+      <div className="page-beam page-beam-left" aria-hidden="true" />
+      <div className="page-beam page-beam-right" aria-hidden="true" />
       <div className="page-glow page-glow-left" aria-hidden="true" />
       <div className="page-glow page-glow-right" aria-hidden="true" />
       <div className="page-dots" aria-hidden="true" />

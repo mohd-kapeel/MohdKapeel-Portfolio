@@ -6,12 +6,61 @@
   color: #f8fbff;
 }
 
+.page-aurora,
+.page-cursor-glow,
+.page-beam,
 .page-glow,
 .page-dots,
 .page-grid {
   position: fixed;
   inset: 0;
   pointer-events: none;
+}
+
+.page-aurora {
+  background:
+    radial-gradient(circle at calc(14% + (var(--cursor-x-ratio, 0.5) * 10%)) 14%, rgba(74, 121, 255, 0.2), transparent 28%),
+    radial-gradient(circle at calc(86% - (var(--cursor-x-ratio, 0.5) * 12%)) 20%, rgba(74, 224, 255, 0.14), transparent 24%),
+    radial-gradient(circle at 50% calc(76% + (var(--cursor-y-ratio, 0.24) * 8%)), rgba(188, 110, 255, 0.14), transparent 30%);
+  opacity: 0.85;
+  animation: auroraDrift 16s ease-in-out infinite alternate;
+}
+
+.page-cursor-glow {
+  inset: auto;
+  width: 32rem;
+  aspect-ratio: 1;
+  left: calc(var(--cursor-x, 50vw) - 16rem);
+  top: calc(var(--cursor-y, 22vh) - 16rem);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(85, 140, 255, 0.18), rgba(85, 140, 255, 0.08) 30%, rgba(85, 140, 255, 0) 72%);
+  filter: blur(12px);
+  opacity: 0.88;
+  transition: opacity 180ms ease;
+  will-change: transform, left, top;
+}
+
+.page-beam {
+  inset: auto auto 8% auto;
+  width: min(42vw, 480px);
+  height: min(82vh, 720px);
+  border-radius: 999px;
+  opacity: 0.28;
+  mix-blend-mode: screen;
+  filter: blur(4px);
+}
+
+.page-beam-left {
+  left: -7vw;
+  background: linear-gradient(180deg, rgba(59, 119, 255, 0), rgba(59, 119, 255, 0.26), rgba(92, 236, 255, 0));
+  transform: rotate(-24deg) translateY(calc((var(--cursor-y-ratio, 0.24) - 0.5) * -32px));
+}
+
+.page-beam-right {
+  right: -10vw;
+  background: linear-gradient(180deg, rgba(211, 118, 255, 0), rgba(211, 118, 255, 0.16), rgba(84, 121, 255, 0));
+  transform: rotate(22deg) translateY(calc((var(--cursor-y-ratio, 0.24) - 0.5) * 36px));
 }
 
 .page-glow {
@@ -49,6 +98,16 @@
   background-size: 42px 42px, 42px 42px, 210px 210px, 210px 210px;
   mask-image: linear-gradient(to bottom, transparent 4%, rgba(0, 0, 0, 0.6) 25%, rgba(0, 0, 0, 0.75) 100%);
   opacity: 0.2;
+}
+
+@keyframes auroraDrift {
+  0% {
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+  }
+
+  100% {
+    transform: translate3d(1.5%, 1.25%, 0) scale(1.04);
+  }
 }
 
 .site-header {
@@ -1836,6 +1895,22 @@
 }
 
 @media (max-width: 860px) {
+  .page-beam {
+    display: none;
+  }
+
+  .page-aurora {
+    opacity: 0.68;
+  }
+
+  .page-cursor-glow {
+    width: 24rem;
+    left: calc(50vw - 12rem);
+    top: 8vh;
+    opacity: 0.42;
+    filter: blur(22px);
+  }
+
   .page-glow,
   .page-dots,
   .page-grid {
@@ -2029,6 +2104,18 @@
 }
 
 @media (max-width: 640px) {
+  .page-aurora {
+    opacity: 0.56;
+    animation-duration: 20s;
+  }
+
+  .page-cursor-glow {
+    width: 18rem;
+    left: calc(50vw - 9rem);
+    top: 10vh;
+    opacity: 0.34;
+  }
+
   .portfolio-shell {
     width: min(100% - 14px, 1180px);
     padding-top: 14px;
@@ -2292,5 +2379,12 @@
 
   .skill-logo {
     animation: none !important;
+  }
+
+  .page-aurora,
+  .page-cursor-glow,
+  .page-beam {
+    animation: none !important;
+    transition: none !important;
   }
 }
