@@ -1095,38 +1095,153 @@
 }
 
 .career-tab {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   text-align: left;
   padding: 22px 18px;
   border-radius: 18px;
-  border: 1px solid rgba(80, 109, 184, 0.2);
-  background: rgba(10, 12, 19, 0.75);
+  border: 1px solid rgba(86, 119, 214, 0.22);
+  background:
+    linear-gradient(135deg, rgba(18, 23, 37, 0.94), rgba(11, 15, 24, 0.92));
   color: #d4daea;
   font: inherit;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 14px 30px rgba(0, 0, 0, 0.16);
   transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease;
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    background 240ms ease;
+}
+
+.career-tab::before {
+  content: '';
+  position: absolute;
+  inset: -20% auto -20% -18%;
+  width: 92px;
+  background: linear-gradient(180deg, rgba(71, 171, 255, 0.2), rgba(104, 92, 255, 0));
+  opacity: 0.62;
+  transform: rotate(12deg);
+  transition: transform 280ms ease, opacity 240ms ease;
+}
+
+.career-tab::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(70, 145, 255, 0.08), transparent 44%, rgba(160, 108, 255, 0.12));
+  opacity: 0;
+  transition: opacity 240ms ease;
 }
 
 .career-tab span {
+  position: relative;
+  z-index: 1;
   display: inline-block;
   width: 30px;
   margin-right: 10px;
   color: #5ccfff;
+  text-shadow: 0 0 12px rgba(92, 207, 255, 0.18);
 }
 
 .career-tab.active {
-  border-color: rgba(82, 211, 255, 0.42);
-  box-shadow: inset 0 0 0 1px rgba(82, 211, 255, 0.15);
+  border-color: rgba(92, 207, 255, 0.46);
+  background:
+    linear-gradient(135deg, rgba(18, 28, 46, 0.98), rgba(15, 20, 35, 0.95));
+  box-shadow:
+    inset 0 0 0 1px rgba(82, 211, 255, 0.12),
+    0 20px 40px rgba(0, 0, 0, 0.24),
+    0 0 26px rgba(92, 207, 255, 0.1);
+}
+
+.career-tab.active::before,
+.career-tab:hover::before {
+  transform: rotate(0deg) translateX(8px);
+  opacity: 0.9;
+}
+
+.career-tab.active::after,
+.career-tab:hover::after {
+  opacity: 1;
+}
+
+.career-tab:hover {
+  border-color: rgba(108, 174, 255, 0.36);
+  box-shadow:
+    inset 0 0 0 1px rgba(82, 211, 255, 0.08),
+    0 18px 36px rgba(0, 0, 0, 0.22),
+    0 0 24px rgba(82, 211, 255, 0.08);
+}
+
+.career-tab.active,
+.career-tab:hover {
+  transform: translateY(-4px) translateX(4px);
 }
 
 .career-panel {
   min-height: 390px;
   padding: 30px;
   border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(86, 124, 255, 0.22);
+  background:
+    radial-gradient(circle at top right, rgba(100, 99, 255, 0.12), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(83, 212, 255, 0.08), transparent 32%),
+    linear-gradient(145deg, rgba(19, 23, 35, 0.94), rgba(11, 14, 24, 0.96));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 22px 50px rgba(0, 0, 0, 0.22);
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.career-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: linear-gradient(180deg, #47abff, #7d63ff);
+  box-shadow: 0 0 26px rgba(84, 142, 255, 0.36);
+}
+
+.career-panel::after {
+  content: '';
+  position: absolute;
+  inset: auto -14% -22% auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(86, 135, 255, 0.14), transparent 66%);
+  opacity: 0.9;
+}
+
+.career-panel:hover {
+  transform: translateY(-6px);
+  border-color: rgba(104, 164, 255, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 28px 60px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(88, 138, 255, 0.08);
+}
+
+.career-panel-content {
+  position: relative;
+  z-index: 1;
+}
+
+.career-panel-content.is-entering {
+  animation: careerPanelIn 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.career-panel-content.is-leaving {
+  animation: careerPanelOut 180ms ease forwards;
 }
 
 .career-panel-top {
@@ -1139,23 +1254,32 @@
 
 .career-chip {
   padding: 10px 14px;
-  border-radius: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(96, 209, 255, 0.18);
   background: rgba(57, 195, 255, 0.11);
   color: #60d1ff;
   font-weight: 700;
   letter-spacing: 0.08em;
+  box-shadow: inset 0 0 0 1px rgba(96, 209, 255, 0.06);
 }
 
 .career-status {
-  color: #8e99b1;
+  color: #9aa7c0;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.86rem;
 }
 
 .career-panel h3 {
+  position: relative;
+  z-index: 1;
   font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.04;
 }
 
 .career-panel p {
+  position: relative;
+  z-index: 1;
   max-width: 42rem;
   margin-top: 20px;
   color: #b1bdd3;
@@ -1164,9 +1288,17 @@
 }
 
 .career-stats {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 70px;
   margin-top: 40px;
+}
+
+.career-stats div {
+  min-width: 140px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(113, 130, 178, 0.18);
 }
 
 .career-stats span {
@@ -1181,6 +1313,8 @@
   display: block;
   margin-top: 8px;
   font-size: 1.8rem;
+  color: #eef4ff;
+  text-shadow: 0 0 20px rgba(83, 141, 255, 0.12);
 }
 
 .project-grid {
@@ -1799,6 +1933,32 @@
   }
   50% {
     transform: translateY(-6px);
+  }
+}
+
+@keyframes careerPanelIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes careerPanelOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.985);
+    filter: blur(5px);
   }
 }
 

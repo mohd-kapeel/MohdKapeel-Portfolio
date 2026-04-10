@@ -217,6 +217,8 @@ const skillIconMap = {
 function App() {
   const [roleIndex, setRoleIndex] = useState(0)
   const [activeCareer, setActiveCareer] = useState(0)
+  const [displayedCareer, setDisplayedCareer] = useState(0)
+  const [isCareerLeaving, setIsCareerLeaving] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -237,6 +239,21 @@ function App() {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+
+  useEffect(() => {
+    if (activeCareer === displayedCareer) {
+      return undefined
+    }
+
+    setIsCareerLeaving(true)
+
+    const timer = window.setTimeout(() => {
+      setDisplayedCareer(activeCareer)
+      setIsCareerLeaving(false)
+    }, 180)
+
+    return () => window.clearTimeout(timer)
+  }, [activeCareer, displayedCareer])
 
   useEffect(() => {
     const root = document.documentElement
@@ -362,7 +379,7 @@ function App() {
     return () => observer.disconnect()
   }, [])
 
-  const currentCareer = careerTracks[activeCareer]
+  const currentCareer = careerTracks[displayedCareer]
   return (
     <main className="portfolio-shell">
       <div className="page-aurora" aria-hidden="true" />
@@ -557,20 +574,25 @@ function App() {
           </div>
 
           <div className="career-panel">
-            <div className="career-panel-top">
-              <span className="career-chip">MODULE_{currentCareer.id}</span>
-              <span className="career-status">Status: {currentCareer.status}</span>
-            </div>
-            <h3>{currentCareer.title}</h3>
-            <p>{currentCareer.summary}</p>
-            <div className="career-stats">
-              <div>
-                <span>Priority</span>
-                <strong>{currentCareer.priority}</strong>
+            <div
+              key={currentCareer.id}
+              className={`career-panel-content ${isCareerLeaving ? 'is-leaving' : 'is-entering'}`}
+            >
+              <div className="career-panel-top">
+                <span className="career-chip">MODULE_{currentCareer.id}</span>
+                <span className="career-status">Status: {currentCareer.status}</span>
               </div>
-              <div>
-                <span>Load</span>
-                <strong>{currentCareer.load}</strong>
+              <h3>{currentCareer.title}</h3>
+              <p>{currentCareer.summary}</p>
+              <div className="career-stats">
+                <div>
+                  <span>Priority</span>
+                  <strong>{currentCareer.priority}</strong>
+                </div>
+                <div>
+                  <span>Load</span>
+                  <strong>{currentCareer.load}</strong>
+                </div>
               </div>
             </div>
           </div>
