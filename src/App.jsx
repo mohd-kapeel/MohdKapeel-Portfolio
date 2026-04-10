@@ -140,6 +140,7 @@ const projects = [
     live: 'https://sliet-mentorship-platform.vercel.app/',
     code: githubProfile,
     previewClass: 'project-preview-mentor',
+    previewMode: 'mentor-home',
   },
   {
     title: 'BolYaar',
@@ -150,6 +151,7 @@ const projects = [
     live: githubProfile,
     code: githubProfile,
     previewClass: 'project-preview-social',
+    previewMode: 'default',
   },
 ]
 
@@ -220,6 +222,13 @@ function App() {
   const [displayedCareer, setDisplayedCareer] = useState(0)
   const [isCareerLeaving, setIsCareerLeaving] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  })
+  const [contactStatus, setContactStatus] = useState('')
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -303,6 +312,48 @@ function App() {
       window.removeEventListener('touchmove', handleTouchMove)
     }
   }, [])
+
+  const handleContactChange = (event) => {
+    const { name, value } = event.target
+    setContactForm((current) => ({
+      ...current,
+      [name]: value,
+    }))
+  }
+
+  const handleContactSubmit = (event) => {
+    event.preventDefault()
+
+    const trimmedForm = {
+      name: contactForm.name.trim(),
+      email: contactForm.email.trim(),
+      subject: contactForm.subject.trim(),
+      message: contactForm.message.trim(),
+    }
+
+    if (!trimmedForm.name || !trimmedForm.email || !trimmedForm.subject || !trimmedForm.message) {
+      setContactStatus('Please fill out all fields before sending.')
+      return
+    }
+
+    const emailBody = [
+      `Name: ${trimmedForm.name}`,
+      `Email: ${trimmedForm.email}`,
+      '',
+      trimmedForm.message,
+    ].join('\n')
+
+    const mailtoLink = `mailto:mohdkapeel786@gmail.com?subject=${encodeURIComponent(trimmedForm.subject)}&body=${encodeURIComponent(emailBody)}`
+
+    window.location.href = mailtoLink
+    setContactStatus('Your email app is opening with your message.')
+    setContactForm({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    })
+  }
 
   useEffect(() => {
     const animatedItems = document.querySelectorAll('.skill-reveal')
@@ -611,15 +662,33 @@ function App() {
               <div className="project-preview">
                 <div className={`project-preview-screen ${project.previewClass}`}>
                   <div className="project-preview-overlay" />
-                  <div className="project-preview-ui">
-                    <span className="project-preview-chip">{project.label}</span>
-                    <div className="project-preview-bar" />
-                    <div className="project-preview-lines">
-                      <span />
-                      <span />
-                      <span />
+                  {project.previewMode === 'mentor-home' ? (
+                    <div className="project-preview-ui project-preview-ui-mentor">
+                      <div className="project-preview-topline">
+                        <span className="project-preview-brand">Sliet Mentors</span>
+                        <span className="project-preview-mini-chip">Live</span>
+                      </div>
+                      <span className="project-preview-chip">{project.label}</span>
+                      <div className="project-preview-heading">
+                        <strong>Meet Your College Mentor</strong>
+                        <span>Book sessions, explore mentors, and grow faster.</span>
+                      </div>
+                      <div className="project-preview-search">
+                        <span className="project-preview-search-field">Search mentors or skills</span>
+                        <span className="project-preview-search-button">Search</span>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="project-preview-ui">
+                      <span className="project-preview-chip">{project.label}</span>
+                      <div className="project-preview-bar" />
+                      <div className="project-preview-lines">
+                        <span />
+                        <span />
+                        <span />
+                      </div>
+                    </div>
+                  )}
                   <div className="project-preview-content">
                     <strong>{project.title}</strong>
                     <span>{project.stack.join(' • ')}</span>
@@ -680,13 +749,38 @@ function App() {
         </div>
 
         <div className="contact-layout">
-          <form className="contact-form scroll-reveal">
+          <form className="contact-form scroll-reveal" onSubmit={handleContactSubmit}>
             <h3>Send Me a Message</h3>
-            <input type="text" placeholder="Your Name" />
-            <input type="email" placeholder="Your Email" />
-            <input type="text" placeholder="Subject" />
-            <textarea placeholder="Your Message" rows="6" />
-            <button type="button">Send Message</button>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={contactForm.name}
+              onChange={handleContactChange}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={contactForm.email}
+              onChange={handleContactChange}
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              value={contactForm.subject}
+              onChange={handleContactChange}
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="6"
+              value={contactForm.message}
+              onChange={handleContactChange}
+            />
+            <button type="submit">Send Message</button>
+            {contactStatus ? <p className="contact-status">{contactStatus}</p> : null}
           </form>
 
           <div className="contact-side">

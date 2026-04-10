@@ -1393,6 +1393,37 @@
   gap: 14px;
 }
 
+.project-preview-ui-mentor {
+  width: min(100%, 300px);
+  gap: 12px;
+}
+
+.project-preview-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.project-preview-brand {
+  color: #314c97;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.project-preview-mini-chip {
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(76, 103, 232, 0.12);
+  color: #4964dd;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .project-preview-chip {
   width: max-content;
   padding: 8px 12px;
@@ -1403,6 +1434,62 @@
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.project-preview-heading {
+  display: grid;
+  gap: 8px;
+}
+
+.project-preview-heading strong {
+  color: #16213e;
+  font-family: 'Sora', sans-serif;
+  font-size: 1.55rem;
+  line-height: 1.05;
+  max-width: 11ch;
+}
+
+.project-preview-heading span {
+  max-width: 26ch;
+  color: rgba(28, 37, 64, 0.72);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.project-preview-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow:
+    inset 0 0 0 1px rgba(101, 120, 170, 0.08),
+    0 14px 24px rgba(61, 81, 133, 0.12);
+}
+
+.project-preview-search-field,
+.project-preview-search-button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 12px;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.project-preview-search-field {
+  flex: 1;
+  padding: 0 14px;
+  background: rgba(242, 246, 255, 0.92);
+  color: rgba(47, 61, 98, 0.68);
+}
+
+.project-preview-search-button {
+  padding: 0 14px;
+  background: linear-gradient(135deg, #4e63ef, #6d4dff);
+  color: #ffffff;
+  box-shadow: 0 10px 18px rgba(78, 99, 239, 0.18);
 }
 
 .project-preview-lines {
@@ -1706,6 +1793,13 @@
   transform: translateY(-3px);
   box-shadow: 0 18px 30px rgba(63, 108, 255, 0.24);
   filter: brightness(1.05);
+}
+
+.contact-status {
+  margin: -4px 0 0;
+  color: #9fd2ff;
+  font-size: 0.96rem;
+  line-height: 1.6;
 }
 
 .contact-side {
