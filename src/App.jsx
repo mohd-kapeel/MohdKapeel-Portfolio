@@ -449,7 +449,7 @@ function App() {
             <div className="orbit-corner orbit-top-right" />
             <div className="orbit-corner orbit-bottom-left" />
             <div className="photo-circle">
-              <img src="/kapeel-profile.jpg" alt="Mohd Kapeel portrait" />
+              <img src="/kapeel-profile.png" alt="Mohd Kapeel portrait" />
             </div>
           </div>
         </div>
