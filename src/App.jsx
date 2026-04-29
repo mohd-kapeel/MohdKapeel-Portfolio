@@ -16,6 +16,7 @@ const rotatingRoles = [
   'React Developer',
   'Next.js Learner',
   'UI Focused Builder',
+  'App Developer',
 ]
 
 const githubProfile = 'https://github.com/mohd-kapeel'
