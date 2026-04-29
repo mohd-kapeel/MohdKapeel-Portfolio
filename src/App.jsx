@@ -147,7 +147,7 @@ const projects = [
     label: 'Social Platform',
     description:
       'Built as a collaborative student social platform featuring anonymous posts, polls, and realtime interactions with Firebase integration.',
-    stack: ['React', 'Firebase', 'Realtime'],
+    stack: ['Fluttr', 'Firebase', 'Realtime'],
     live: githubProfile,
     code: githubProfile,
     previewClass: 'project-preview-social',
