@@ -487,7 +487,7 @@ function App() {
           </p>
 
           <div className="hero-actions">
-            <a className="primary-btn" href="/Mohd-Kapeel-Resume.pdf" download>
+            <a className="primary-btn" href="/Resume.pdf" download>
               Check Resume
             </a>
             <a className="secondary-btn" href="#contact">
