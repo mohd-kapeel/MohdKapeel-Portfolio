@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import KapeelChatbot from "./components/KapeelChatbot";
 import './App.css'
 
 const navItems = [
@@ -148,7 +149,7 @@ const projects = [
     label: 'Social Platform',
     description:
       'Built as a collaborative student social platform featuring anonymous posts, polls, and realtime interactions with Firebase integration.',
-    stack: ['Fluttr', 'Firebase', 'Realtime'],
+    stack: ['Flutter', 'Firebase', 'Realtime'],
     live: githubProfile,
     code: githubProfile,
     previewClass: 'project-preview-social',
@@ -515,10 +516,15 @@ function App() {
           <div className="photo-frame">
             <div className="orbit-ring orbit-ring-one" />
             <div className="orbit-ring orbit-ring-two" />
+
             <div className="orbit-corner orbit-top-right" />
             <div className="orbit-corner orbit-bottom-left" />
+
             <div className="photo-circle">
-              <img src="/professional_headshot.jpg" alt="Mohd Kapeel portrait" />
+              <img
+                src="/professional_headshot.jpg"
+                alt="Mohd Kapeel portrait"
+              />
             </div>
           </div>
         </div>
@@ -823,6 +829,7 @@ function App() {
           <h3>Mohd Kapeel</h3>
           <p>Creating clean and modern web experiences.</p>
         </div>
+
         <div className="footer-links">
           {socialLinks.map((item) => (
             <a
@@ -837,14 +844,20 @@ function App() {
             </a>
           ))}
         </div>
+
         <div className="footer-policy-links">
           <a href="#contact">Privacy Policy</a>
           <a href="#contact">Terms of Service</a>
         </div>
+
         <p className="footer-copyright">
           © 2026 Mohd Kapeel. All rights reserved.
         </p>
       </footer>
+
+      {/* Kapeel AI Chatbot */}
+      <KapeelChatbot />
+
     </main>
   )
 }
