@@ -134,6 +134,18 @@ const careerTracks = [
 
 const projects = [
   {
+    title: 'AI Hire Pro',
+    label: 'AI Recruitment Platform',
+    description:
+      'An AI-powered recruitment platform that helps recruiters screen candidates, analyze resumes, and streamline the hiring workflow.',
+    stack: ['React', 'Vite', 'JavaScript', 'CSS', 'AI'],
+    live: 'https://ai-hire-pro-demo-website.vercel.app/',
+    code: 'https://github.com/mohd-kapeel/ai-hire-pro-demo-website',
+    previewClass: 'project-preview-ai',
+    previewMode: 'ai-hire-pro',
+  },
+
+  {
     title: 'SLIET Mentorship Platform',
     label: 'Mentorship Product',
     description:
@@ -144,6 +156,7 @@ const projects = [
     previewClass: 'project-preview-mentor',
     previewMode: 'mentor-home',
   },
+
   {
     title: 'BolYaar',
     label: 'Social Platform',
@@ -658,72 +671,257 @@ function App() {
       </section>
 
       <section className="section-block" id="projects">
-        <div className="section-title reveal">
-          <h2>Featured Projects</h2>
-          <p>Some of the projects I have worked on with frontend focus</p>
-        </div>
+  <div className="section-title reveal">
+    <h2>Featured Projects</h2>
+    <p>Some of the projects I have worked on with frontend focus</p>
+  </div>
 
-        <div className="project-grid">
-          {projects.map((project) => (
-            <article className="project-card scroll-reveal" key={project.title}>
-              <div className="project-preview">
-                <div className={`project-preview-screen ${project.previewClass}`}>
-                  <div className="project-preview-overlay" />
-                  {project.previewMode === 'mentor-home' ? (
-                    <div className="project-preview-ui project-preview-ui-mentor">
-                      <div className="project-preview-topline">
-                        <span className="project-preview-brand">Sliet Mentors</span>
-                        <span className="project-preview-mini-chip">Live</span>
-                      </div>
-                      <span className="project-preview-chip">{project.label}</span>
-                      <div className="project-preview-heading">
-                        <strong>Meet Your College Mentor</strong>
-                        <span>Book sessions, explore mentors, and grow faster.</span>
-                      </div>
-                      <div className="project-preview-search">
-                        <span className="project-preview-search-field">Search mentors or skills</span>
-                        <span className="project-preview-search-button">Search</span>
-                      </div>
+  <div className="project-grid">
+    {projects.map((project) => (
+      <article
+        className="project-card scroll-reveal"
+        key={project.title}
+      >
+        <div className="project-preview">
+          <div
+            className={`project-preview-screen ${project.previewClass}`}
+          >
+            <div className="project-preview-overlay" />
+
+            {/* =========================
+                AI HIRE PRO PREVIEW
+                ========================= */}
+            {project.previewMode === 'ai-hire-pro' ? (
+              <div className="ai-hire-preview">
+
+                <div className="ai-hire-preview-header">
+                  <div className="ai-hire-preview-logo">
+                    <span className="ai-logo-mark">✦</span>
+                    <strong>AI Hire Pro</strong>
+                  </div>
+
+                  <div className="ai-hire-preview-nav">
+                    <span>Dashboard</span>
+                    <span>Jobs</span>
+                    <span>Candidates</span>
+                  </div>
+
+                  <div className="ai-hire-preview-profile">
+                    MK
+                  </div>
+                </div>
+
+                <div className="ai-hire-preview-body">
+
+                  <div className="ai-hire-preview-left">
+
+                    <span className="ai-hire-preview-badge">
+                      AI-POWERED RECRUITMENT
+                    </span>
+
+                    <h4>
+                      Hire smarter.
+                      <br />
+                      Hire faster.
+                    </h4>
+
+                    <p>
+                      AI-powered candidate screening and
+                      intelligent recruitment workflows.
+                    </p>
+
+                    <div className="ai-hire-preview-buttons">
+                      <span>Start Hiring</span>
+                      <span>View Candidates</span>
                     </div>
-                  ) : (
-                    <div className="project-preview-ui">
-                      <span className="project-preview-chip">{project.label}</span>
-                      <div className="project-preview-bar" />
-                      <div className="project-preview-lines">
-                        <span />
-                        <span />
-                        <span />
-                      </div>
+
+                  </div>
+
+                  <div className="ai-hire-preview-dashboard">
+
+                    <div className="ai-dashboard-heading">
+                      <span>Candidate Analysis</span>
+                      <b>Live</b>
                     </div>
-                  )}
-                  <div className="project-preview-content">
-                    <strong>{project.title}</strong>
-                    <span>{project.stack.join(' • ')}</span>
+
+                    <div className="ai-match-row">
+
+                      <div className="ai-match-circle">
+                        <strong>94%</strong>
+                        <small>Match</small>
+                      </div>
+
+                      <div className="ai-match-info">
+                        <strong>Candidate Match</strong>
+                        <span>
+                          Excellent fit for this role
+                        </span>
+                      </div>
+
+                    </div>
+
+                    <div className="ai-analysis-bars">
+
+                      <div>
+                        <span>Skills</span>
+                        <i>
+                          <em style={{ width: '92%' }} />
+                        </i>
+                      </div>
+
+                      <div>
+                        <span>Experience</span>
+                        <i>
+                          <em style={{ width: '84%' }} />
+                        </i>
+                      </div>
+
+                      <div>
+                        <span>Education</span>
+                        <i>
+                          <em style={{ width: '96%' }} />
+                        </i>
+                      </div>
+
+                    </div>
+
+                    <div className="ai-candidate-row">
+
+                      <div className="ai-candidate-avatar">
+                        MK
+                      </div>
+
+                      <div>
+                        <strong>Candidate Profile</strong>
+                        <span>Resume analyzed by AI</span>
+                      </div>
+
+                      <b>94%</b>
+
+                    </div>
+
                   </div>
                 </div>
               </div>
-              <div className="project-body">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="project-tags">
-                  {project.stack.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
-                <div className="project-links">
-                  <a href={project.live} target="_blank" rel="noreferrer">
-                    Live Demo
-                  </a>
-                  <a href={project.code} target="_blank" rel="noreferrer">
-                    Source Code
-                  </a>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
 
+            ) : project.previewMode === 'mentor-home' ? (
+
+              /* =========================
+                 SLIET MENTORSHIP PREVIEW
+                 ========================= */
+              <div className="project-preview-ui project-preview-ui-mentor">
+
+                <div className="project-preview-topline">
+                  <span className="project-preview-brand">
+                    Sliet Mentors
+                  </span>
+
+                  <span className="project-preview-mini-chip">
+                    Live
+                  </span>
+                </div>
+
+                <span className="project-preview-chip">
+                  {project.label}
+                </span>
+
+                <div className="project-preview-heading">
+                  <strong>
+                    Meet Your College Mentor
+                  </strong>
+
+                  <span>
+                    Book sessions, explore mentors, and grow faster.
+                  </span>
+                </div>
+
+                <div className="project-preview-search">
+
+                  <span className="project-preview-search-field">
+                    Search mentors or skills
+                  </span>
+
+                  <span className="project-preview-search-button">
+                    Search
+                  </span>
+
+                </div>
+
+              </div>
+
+            ) : (
+
+              /* =========================
+                 DEFAULT / BOLYAAR PREVIEW
+                 ========================= */
+              <div className="project-preview-ui">
+
+                <span className="project-preview-chip">
+                  {project.label}
+                </span>
+
+                <div className="project-preview-bar" />
+
+                <div className="project-preview-lines">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+
+              </div>
+            )}
+
+            <div className="project-preview-content">
+              <strong>{project.title}</strong>
+
+              <span>
+                {project.stack.join(' • ')}
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+        <div className="project-body">
+
+          <h3>{project.title}</h3>
+
+          <p>{project.description}</p>
+
+          <div className="project-tags">
+            {project.stack.map((item) => (
+              <span key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="project-links">
+
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Live Demo
+            </a>
+
+            <a
+              href={project.code}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Source Code
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+    ))}
+  </div>
+</section>
       <section className="section-block" id="experience">
         <div className="section-title reveal">
           <h2>My Experience</h2>
