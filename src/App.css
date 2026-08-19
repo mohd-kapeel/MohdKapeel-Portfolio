@@ -759,7 +759,7 @@
 
 .skill-logo {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   display: grid;
   place-items: center;
   width: 48px;
@@ -769,6 +769,10 @@
   font-size: 1.24rem;
   font-weight: 800;
   animation: skillLogoFloat 2.8s ease-in-out infinite;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateZ(0);
+  pointer-events: none;
 }
 
 .hex-skill:nth-child(2n) .skill-logo {
@@ -780,10 +784,16 @@
 }
 
 .skill-logo-image {
+  position: relative;
+  z-index: 11;
   width: 34px;
   height: 34px;
   object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.08));
+  display: block;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.12));
+  pointer-events: none;
 }
 
 .skill-logo-react {
@@ -8165,5 +8175,1601 @@ img {
 @media (max-height: 500px) and (orientation: landscape) {
   .hero-section {
     min-height: auto;
+  }
+}
+
+/* =========================================================
+   FINAL SKILL LOGO FIX
+   Keep logos visible during hover
+   ========================================================= */
+
+.hex-skill {
+  position: relative;
+  isolation: isolate;
+}
+
+.hex-skill::before {
+  z-index: 0 !important;
+}
+
+.hex-skill::after {
+  z-index: 1 !important;
+  pointer-events: none;
+}
+
+.hex-skill .skill-logo {
+  position: relative;
+  z-index: 20 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: grid !important;
+  place-items: center !important;
+  transform: translateZ(0);
+  pointer-events: none;
+}
+
+.hex-skill .skill-logo-image {
+  position: relative;
+  z-index: 21 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Hover must NOT hide the logo */
+.hex-skill:hover .skill-logo,
+.hex-skill:hover .skill-logo-image {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Keep text above the decorative layers */
+.hex-skill > span {
+  position: relative;
+  z-index: 20 !important;
+}
+
+/* Better visibility for dark brand logos */
+.skill-logo-codex .skill-logo-image,
+.skill-logo-cursor .skill-logo-image,
+.skill-logo-replit .skill-logo-image,
+.skill-logo-github .skill-logo-image {
+  filter: brightness(0) invert(1)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.18));
+}
+
+/* Keep original brand logo colors */
+.hex-skill .skill-logo-image {
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Keep logos visible when hovering */
+.hex-skill:hover .skill-logo-image {
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 520px) {
+  .hex-skill .skill-logo {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .hex-skill .skill-logo-image {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+/* =========================================================
+   SKILL LOGOS - ORIGINAL COLORS + ALWAYS VISIBLE
+   ========================================================= */
+
+.hex-skill .skill-logo {
+  position: relative;
+  z-index: 20 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+
+.hex-skill .skill-logo-image {
+  position: relative;
+  z-index: 21 !important;
+
+  width: 34px !important;
+  height: 34px !important;
+
+  display: block !important;
+  object-fit: contain;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  filter: none !important;
+
+  transform: translateZ(0);
+  transition: transform 0.28s ease;
+}
+
+/* Hover - logo remains visible */
+.hex-skill:hover .skill-logo {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hex-skill:hover .skill-logo-image {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  transform: scale(1.08);
+}
+
+/* Don't allow hexagon overlay to cover logo */
+.hex-skill::before,
+.hex-skill::after {
+  pointer-events: none;
+}
+
+.hex-skill .skill-logo {
+  isolation: isolate;
+}
+
+/* =========================================================
+   CRM SUITE PROJECT PREVIEW
+   FIXED VERSION
+   ========================================================= */
+
+.project-preview-screen.project-preview-crm {
+  min-height: 238px !important;
+  height: 238px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 20px 20px 0 0;
+  display: block !important;
+  box-sizing: border-box;
+}
+
+.crm-project-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 238px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 78% 42%,
+      rgba(73, 104, 255, 0.18),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 14% 80%,
+      rgba(25, 194, 170, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f8faff 0%,
+      #eef3ff 100%
+    );
+
+  color: #16213d;
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   CRM NAVBAR
+   ========================================================= */
+
+.crm-preview-navbar {
+  position: relative;
+  z-index: 5;
+
+  height: 42px;
+
+  margin: 10px 14px 0;
+  padding: 6px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(80, 105, 180, 0.14);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  box-shadow:
+    0 8px 24px rgba(50, 70, 130, 0.08);
+}
+
+
+.crm-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+
+.crm-brand-logo {
+  width: 25px;
+  height: 25px;
+
+  flex: 0 0 25px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3967ff,
+      #735cff
+    );
+
+  color: #ffffff;
+
+  font-size: 7px;
+  font-weight: 800;
+}
+
+
+.crm-brand strong {
+  color: #243153;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+
+.crm-nav-links {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #65708a;
+
+  font-size: 6px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+.crm-auth {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #59657e;
+
+  font-size: 6px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+.crm-auth button {
+  padding: 4px 7px;
+
+  border: 1px solid #dce1ed;
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #27324e;
+
+  font-size: 6px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CRM MAIN CONTENT
+   ========================================================= */
+
+.crm-preview-content {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    0.84fr
+    1.16fr;
+
+  gap: 12px;
+
+  height: calc(100% - 52px);
+
+  padding: 16px 20px 10px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CRM LEFT CONTENT
+   ========================================================= */
+
+.crm-preview-copy {
+  position: relative;
+
+  z-index: 3;
+
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+
+.crm-badge {
+  display: inline-block;
+
+  max-width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 4px 7px;
+
+  border: 1px solid #dce4f4;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: #536ce4;
+
+  font-size: 5px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+
+  white-space: nowrap;
+}
+
+
+.crm-preview-copy h2 {
+  margin: 10px 0 6px;
+
+  color: #172342;
+
+  font-size: clamp(
+    25px,
+    3.2vw,
+    38px
+  );
+
+  line-height: 0.94;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 500;
+}
+
+
+.crm-preview-copy h2 span {
+  color: #4769ff;
+}
+
+
+.crm-preview-copy p {
+  max-width: 260px;
+
+  margin: 0;
+
+  color: #5e6981;
+
+  font-size: 6px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   CRM BUTTONS
+   ========================================================= */
+
+.crm-preview-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 9px;
+}
+
+
+.crm-preview-actions a {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 7px;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  font-size: 5px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+.crm-preview-actions a:first-child {
+  background:
+    linear-gradient(
+      135deg,
+      #3767ff,
+      #27bfa5
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 6px 14px rgba(
+      55,
+      103,
+      255,
+      0.18
+    );
+}
+
+
+.crm-preview-actions a:last-child {
+  border: 1px solid #d9dfec;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.92
+  );
+
+  color: #4b5872;
+}
+
+
+/* =========================================================
+   CRM TEAM
+   ========================================================= */
+
+.crm-team {
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  margin-top: 8px;
+}
+
+
+.crm-team > span {
+  width: 15px;
+  height: 15px;
+
+  flex: 0 0 15px;
+
+  display: grid;
+  place-items: center;
+
+  margin-left: -2px;
+
+  border: 1px solid #ffffff;
+
+  border-radius: 50%;
+
+  background: #536eff;
+
+  color: #ffffff;
+
+  font-size: 4px;
+
+  font-weight: 800;
+}
+
+
+.crm-team > span:nth-child(2) {
+  background: #22bfa6;
+}
+
+
+.crm-team > span:nth-child(3) {
+  background: #e86d91;
+}
+
+
+.crm-team > span:nth-child(4) {
+  background: #f0a43a;
+}
+
+
+.crm-team small {
+  margin-left: 3px;
+
+  color: #6c7890;
+
+  font-size: 4.5px;
+}
+
+
+/* =========================================================
+   CRM DASHBOARD
+   ========================================================= */
+
+.crm-preview-dashboard {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.crm-dashboard-window {
+  width: 98%;
+
+  height: 162px;
+
+  overflow: hidden;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 16px 38px
+      rgba(
+        50,
+        70,
+        130,
+        0.20
+      ),
+    0 4px 14px
+      rgba(
+        30,
+        40,
+        80,
+        0.08
+      );
+
+  transform:
+    perspective(900px)
+    rotateY(-2deg);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CRM WINDOW BAR
+   ========================================================= */
+
+.crm-window-bar {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  height: 17px;
+
+  padding: 0 7px;
+
+  box-sizing: border-box;
+
+  background: #101522;
+}
+
+
+.crm-window-bar > span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #ff6684;
+}
+
+
+.crm-window-bar > span:nth-child(2) {
+  background: #f6b44c;
+}
+
+
+.crm-window-bar > span:nth-child(3) {
+  background: #48c6a8;
+}
+
+
+.crm-window-bar small {
+  margin-left: 5px;
+
+  color: #7d879b;
+
+  font-size: 4px;
+}
+
+
+/* =========================================================
+   CRM DASHBOARD BODY
+   ========================================================= */
+
+.crm-dashboard-body {
+  display: flex;
+
+  width: 100%;
+
+  height: calc(100% - 17px);
+
+  min-height: 0;
+}
+
+
+/* =========================================================
+   CRM SIDEBAR
+   ========================================================= */
+
+.crm-sidebar {
+  width: 54px;
+
+  flex: 0 0 54px;
+
+  padding: 7px 4px;
+
+  box-sizing: border-box;
+
+  background: #101522;
+
+  color: #8c96a8;
+
+  font-size: 3.5px;
+}
+
+
+.crm-sidebar strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #ffffff;
+
+  font-size: 5px;
+}
+
+
+.crm-sidebar div {
+  padding: 3px;
+
+  border-radius: 3px;
+}
+
+
+.crm-sidebar-active {
+  background: #315fff;
+
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   CRM DASHBOARD MAIN
+   ========================================================= */
+
+.crm-dashboard-main {
+  flex: 1;
+
+  min-width: 0;
+
+  min-height: 0;
+
+  padding: 7px;
+
+  box-sizing: border-box;
+
+  background: #f8faff;
+}
+
+
+.crm-dashboard-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.crm-dashboard-header small {
+  color: #8b95a9;
+
+  font-size: 3.5px;
+}
+
+
+.crm-dashboard-header h3 {
+  margin: 1px 0 4px;
+
+  color: #26334e;
+
+  font-size: 7px;
+}
+
+
+.crm-user {
+  width: 13px;
+  height: 13px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #4268ff;
+
+  color: #ffffff;
+
+  font-size: 4px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   CRM STAT CARDS
+   ========================================================= */
+
+.crm-stat-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 3px;
+}
+
+
+.crm-stat-grid > div {
+  min-width: 0;
+
+  padding: 4px;
+
+  border: 1px solid #e8ecf4;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+.crm-stat-grid small {
+  display: block;
+
+  overflow: hidden;
+
+  color: #8b95a9;
+
+  font-size: 3px;
+
+  white-space: nowrap;
+}
+
+
+.crm-stat-grid strong {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #26334e;
+
+  font-size: 6px;
+}
+
+
+/* =========================================================
+   CRM DASHBOARD PANELS
+   ========================================================= */
+
+.crm-dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.45fr
+    1fr;
+
+  gap: 3px;
+
+  margin-top: 3px;
+}
+
+
+.crm-panel {
+  min-width: 0;
+
+  padding: 4px;
+
+  border: 1px solid #e8ecf4;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  font-size: 3px;
+}
+
+
+.crm-panel > strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #26334e;
+
+  font-size: 3.5px;
+}
+
+
+.crm-panel > div {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 4px;
+
+  padding: 1.5px 0;
+
+  color: #7b869b;
+}
+
+
+.crm-panel b {
+  color: #2d3850;
+}
+
+
+/* =========================================================
+   CRM FLOATING CARDS
+   ========================================================= */
+
+.crm-floating-card {
+  position: absolute;
+
+  z-index: 8;
+
+  padding: 5px 7px;
+
+  border-radius: 6px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.96
+  );
+
+  box-shadow:
+    0 8px 20px
+      rgba(
+        50,
+        70,
+        130,
+        0.14
+      );
+
+  font-size: 4px;
+}
+
+
+.crm-floating-card strong {
+  display: block;
+
+  color: #27334e;
+}
+
+
+.crm-floating-card small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #8993a7;
+
+  font-size: 3px;
+}
+
+
+.crm-live-card {
+  top: 18%;
+
+  left: 0;
+}
+
+
+.crm-work-card {
+  right: 0;
+
+  bottom: 8%;
+}
+
+
+/* =========================================================
+   CRM HOVER
+   ========================================================= */
+
+.project-card:hover
+.crm-dashboard-window {
+  transform:
+    perspective(900px)
+    rotateY(-2deg)
+    scale(1.015);
+}
+
+
+/* =========================================================
+   CRM TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .crm-nav-links {
+    display: none;
+  }
+
+  .crm-preview-content {
+    grid-template-columns:
+      0.9fr
+      1.1fr;
+
+    gap: 8px;
+
+    padding:
+      13px
+      14px
+      8px;
+  }
+
+  .crm-preview-copy h2 {
+    font-size: 27px;
+  }
+
+  .crm-dashboard-window {
+    width: 100%;
+
+    height: 158px;
+  }
+
+  .crm-floating-card {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   CRM MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .project-preview-screen.project-preview-crm {
+    min-height: 170px !important;
+
+    height: 170px !important;
+  }
+
+  .crm-project-preview {
+    min-height: 170px;
+  }
+
+  .crm-preview-navbar {
+    height: 30px;
+
+    margin: 7px 8px 0;
+
+    padding: 4px 7px;
+
+    border-radius: 8px;
+  }
+
+  .crm-brand-logo {
+    width: 19px;
+    height: 19px;
+
+    flex-basis: 19px;
+
+    border-radius: 5px;
+
+    font-size: 5px;
+  }
+
+  .crm-brand strong {
+    font-size: 7px;
+  }
+
+  .crm-auth {
+    font-size: 4px;
+  }
+
+  .crm-auth button {
+    padding: 3px 5px;
+
+    border-radius: 5px;
+
+    font-size: 4px;
+  }
+
+  .crm-preview-content {
+    height: calc(100% - 37px);
+
+    grid-template-columns:
+      0.9fr
+      1.1fr;
+
+    gap: 5px;
+
+    padding:
+      10px
+      9px
+      6px;
+  }
+
+  .crm-badge {
+    padding: 3px 5px;
+
+    font-size: 3px;
+  }
+
+  .crm-preview-copy h2 {
+    margin: 6px 0 3px;
+
+    font-size: 18px;
+  }
+
+  .crm-preview-copy p {
+    font-size: 3.5px;
+
+    line-height: 1.4;
+  }
+
+  .crm-preview-actions {
+    gap: 3px;
+
+    margin-top: 5px;
+  }
+
+  .crm-preview-actions a {
+    padding: 3px 5px;
+
+    border-radius: 4px;
+
+    font-size: 3.5px;
+  }
+
+  .crm-team {
+    margin-top: 4px;
+  }
+
+  .crm-team > span {
+    width: 9px;
+    height: 9px;
+
+    flex-basis: 9px;
+
+    font-size: 2.5px;
+  }
+
+  .crm-team small {
+    font-size: 2.5px;
+  }
+
+  .crm-dashboard-window {
+    height: 110px;
+
+    border-radius: 6px;
+
+    transform: none;
+  }
+
+  .crm-window-bar {
+    height: 11px;
+
+    padding: 0 5px;
+  }
+
+  .crm-window-bar > span {
+    width: 3px;
+    height: 3px;
+  }
+
+  .crm-window-bar small {
+    font-size: 2.5px;
+  }
+
+  .crm-dashboard-body {
+    height: calc(100% - 11px);
+  }
+
+  .crm-sidebar {
+    width: 39px;
+
+    flex-basis: 39px;
+
+    padding: 4px 3px;
+
+    font-size: 2.5px;
+  }
+
+  .crm-sidebar strong {
+    margin-bottom: 4px;
+
+    font-size: 3.5px;
+  }
+
+  .crm-sidebar div {
+    padding: 2px;
+  }
+
+  .crm-dashboard-main {
+    padding: 4px;
+  }
+
+  .crm-dashboard-header small {
+    font-size: 2.5px;
+  }
+
+  .crm-dashboard-header h3 {
+    font-size: 5px;
+  }
+
+  .crm-user {
+    width: 9px;
+    height: 9px;
+
+    font-size: 3px;
+  }
+
+  .crm-stat-grid {
+    gap: 2px;
+  }
+
+  .crm-stat-grid > div {
+    padding: 2px;
+  }
+
+  .crm-stat-grid small {
+    font-size: 2px;
+  }
+
+  .crm-stat-grid strong {
+    font-size: 4px;
+  }
+
+  .crm-dashboard-grid {
+    gap: 2px;
+
+    margin-top: 2px;
+  }
+
+  .crm-panel {
+    padding: 2px;
+
+    font-size: 2px;
+  }
+
+  .crm-panel > strong {
+    margin-bottom: 2px;
+
+    font-size: 2.5px;
+  }
+
+  .crm-panel > div {
+    padding: 1px 0;
+  }
+
+  .crm-floating-card {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   CRM SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .crm-preview-content {
+    grid-template-columns:
+      0.82fr
+      1.18fr;
+
+    padding-inline: 7px;
+  }
+
+  .crm-preview-copy h2 {
+    font-size: 16px;
+  }
+
+  .crm-preview-copy p {
+    display: none;
+  }
+
+  .crm-preview-actions {
+    margin-top: 7px;
+  }
+
+  .crm-dashboard-window {
+    height: 104px;
+  }
+
+  .crm-sidebar {
+    width: 34px;
+
+    flex-basis: 34px;
+  }
+}
+
+
+/* =========================================================
+   FINAL PROJECT CARD HEIGHT FIX
+   ADD THIS AT THE VERY END OF src/App.css
+   ========================================================= */
+
+.project-grid {
+  align-items: stretch !important;
+}
+
+.project-card {
+  height: 620px !important;
+  min-height: 620px !important;
+  max-height: 620px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   ALL PROJECT PREVIEWS
+   ========================================================= */
+
+.project-card .project-preview,
+.project-card .project-preview-screen {
+  flex: 0 0 238px !important;
+
+  width: 100% !important;
+  height: 238px !important;
+  min-height: 238px !important;
+  max-height: 238px !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   AI HIRE PRO
+   ========================================================= */
+
+.project-card .project-preview-ai {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: 100% !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   CRM SUITE
+   ========================================================= */
+
+.project-card .project-preview-crm {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: 100% !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.project-card .crm-project-preview {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: 100% !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   SLIET MENTORSHIP
+   ========================================================= */
+
+.project-card .project-preview-mentor {
+  width: 100% !important;
+  height: 100% !important;
+
+  min-height: 0 !important;
+  max-height: 100% !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.project-card .project-preview-mentor .project-preview-ui {
+  width: 100% !important;
+
+  min-height: 0 !important;
+  max-height: 100% !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.project-card .project-preview-mentor .project-preview-ui-mentor {
+  min-height: 0 !important;
+  max-height: 100% !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Prevent Mentor content from expanding vertically */
+
+.project-card .project-preview-mentor .project-preview-content {
+  min-height: 0 !important;
+  max-height: 100% !important;
+
+  overflow: hidden !important;
+}
+
+/* =========================================================
+   BOLYAAR
+   ========================================================= */
+
+.project-card .project-preview-social {
+  width: 100% !important;
+  height: 100% !important;
+
+  min-height: 0 !important;
+  max-height: 100% !important;
+
+  padding: 0 !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.project-card .bolyaar-project-preview {
+  width: 100% !important;
+  height: 100% !important;
+
+  min-height: 0 !important;
+  max-height: 100% !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* BolYaar text */
+
+.project-card .bolyaar-preview-header {
+  max-height: 100% !important;
+  overflow: hidden !important;
+}
+
+/* BolYaar phone */
+
+.project-card .bolyaar-preview-image-wrap {
+  height: 214px !important;
+  max-height: calc(100% - 18px) !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.project-card .bolyaar-preview-image {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: contain !important;
+
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+/* BolYaar bottom tags */
+
+.project-card .bolyaar-preview-footer {
+  max-height: 38px !important;
+
+  overflow: hidden !important;
+}
+
+/* =========================================================
+   PROJECT BODY
+   ========================================================= */
+
+.project-card .project-body {
+  flex: 1 1 auto !important;
+
+  width: 100% !important;
+
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+
+  overflow: hidden !important;
+
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .project-card {
+    height: 620px !important;
+    min-height: 620px !important;
+    max-height: 620px !important;
+  }
+
+  .project-card .project-preview,
+  .project-card .project-preview-screen {
+    flex: 0 0 238px !important;
+
+    height: 238px !important;
+    min-height: 238px !important;
+    max-height: 238px !important;
+  }
+
+  .project-card .bolyaar-preview-image-wrap {
+    right: 20px !important;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .project-card {
+    height: 570px !important;
+    min-height: 570px !important;
+    max-height: 570px !important;
+  }
+
+  .project-card .project-preview,
+  .project-card .project-preview-screen {
+    flex: 0 0 210px !important;
+
+    height: 210px !important;
+    min-height: 210px !important;
+    max-height: 210px !important;
+  }
+
+  .project-card .project-preview-mentor,
+  .project-card .project-preview-social,
+  .project-card .bolyaar-project-preview {
+    height: 100% !important;
+
+    min-height: 0 !important;
+    max-height: 100% !important;
+  }
+
+  .project-card .bolyaar-preview-image-wrap {
+    width: 88px !important;
+    height: 190px !important;
+
+    max-height: calc(100% - 14px) !important;
+  }
+
+  .project-card .project-body {
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .project-card {
+    height: 555px !important;
+    min-height: 555px !important;
+    max-height: 555px !important;
+  }
+
+  .project-card .project-preview,
+  .project-card .project-preview-screen {
+    flex: 0 0 195px !important;
+
+    height: 195px !important;
+    min-height: 195px !important;
+    max-height: 195px !important;
+  }
+
+  .project-card .bolyaar-preview-image-wrap {
+    width: 78px !important;
+    height: 176px !important;
+
+    max-height: calc(100% - 14px) !important;
+  }
+}
+
+/* =========================================================
+   IMPORTANT:
+   PREVENT HOVER / TRANSFORM FROM CHANGING CARD SIZE
+   ========================================================= */
+
+.project-card:hover {
+  box-sizing: border-box !important;
+}
+
+.project-card:hover .project-preview,
+.project-card:hover .project-preview-screen {
+  max-height: inherit;
+}
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) {
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .project-preview,
+  .project-card:hover .project-preview-screen {
+    transform: none;
+    filter: none;
   }
 }

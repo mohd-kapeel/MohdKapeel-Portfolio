@@ -58,3 +58,27 @@ img {
   background: rgba(255, 145, 77, 0.28);
   color: #fff6ef;
 }
+
+.skill-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-logo-image {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.fallback-skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}

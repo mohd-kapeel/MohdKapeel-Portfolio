@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import KapeelChatbot from "./components/KapeelChatbot";
 import './App.css'
 
+
 const navItems = [
   ['Home', '#home'],
   ['Skills', '#skills'],
@@ -22,42 +23,191 @@ const rotatingRoles = [
 ];
 
 const githubProfile = 'https://github.com/mohd-kapeel'
+
 const skillRows = [
   [
     {
       title: 'Frontend',
       accent: 'blue',
       items: [
-        { name: 'HTML', icon: 'html', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-        { name: 'CSS', icon: 'css', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-        { name: 'JavaScript', icon: 'javascript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-        { name: 'React JS', icon: 'react', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-        { name: 'Next JS', icon: 'next', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-        { name: 'Flutter', icon: 'flutter', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
+        {
+          name: 'HTML5',
+          icon: 'html',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+        },
+        {
+          name: 'CSS3',
+          icon: 'css',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+        },
+        {
+          name: 'JavaScript',
+          icon: 'javascript',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+        },
+        {
+          name: 'React.js',
+          icon: 'react',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        },
+        {
+          name: 'Next.js',
+          icon: 'next',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+        },
+        {
+          name: 'Tailwind CSS',
+          icon: 'tailwind',
+          logo: 'https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg',
+        },
+        {
+          name: 'Vite',
+          icon: 'vite',
+          logo: 'https://www.svgrepo.com/show/374167/vite.svg',
+        },
+        {
+          name: 'Flutter',
+          icon: 'flutter',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
+        },
       ],
     },
+
     {
       title: 'Programming',
       accent: 'green',
       items: [
-        { name: 'C', icon: 'c', logo: '' },
-        { name: 'C++', icon: 'cpp', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
-        { name: 'Java', icon: 'java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-        { name: 'SQL', icon: 'sql', logo: '' },
-        { name: 'DBMS', icon: 'dbms', logo: '' },
-        { name: 'OOPS', icon: 'oops', logo: '' },
+        {
+          name: 'C',
+          icon: 'c',
+          logo: 'https://cdn.worldvectorlogo.com/logos/c-1.svg',
+        },
+        {
+          name: 'C++',
+          icon: 'cpp',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg',
+        },
+        {
+          name: 'Java',
+          icon: 'java',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg',
+        },
+        {
+          name: 'Data Structures',
+          icon: 'dsa',
+          logo: 'https://img.icons8.com/?size=100&id=s35S45z4txOJ&format=png&color=40C057',
+        },
+        {
+          name: 'OOPS',
+          icon: 'oops',
+          logo: 'https://cdn-icons-png.flaticon.com/512/1005/1005141.png',
+        },
+        {
+          name: 'DBMS',
+          icon: 'dbms',
+          logo: 'https://img.icons8.com/?size=100&id=sVW3n13wlswT&format=png&color=000000',
+        },
       ],
     },
   ],
+
   [
     {
-      title: 'Others',
+      title: 'Backend & APIs',
+      accent: 'purple',
+      items: [
+        {
+          name: 'Node.js',
+          icon: 'nodejs',
+          logo: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg',
+        },
+        {
+          name: 'REST APIs',
+          icon: 'api',
+          logo: 'https://img.icons8.com/?size=100&id=121837&format=png&color=228BE6',
+        },
+        {
+          name: 'FastAPI',
+          icon: 'fastapi',
+          logo: 'https://cdn.worldvectorlogo.com/logos/fastapi.svg',
+        },
+        {
+          name: 'MySQL',
+          icon: 'mysql',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+        },
+        {
+          name: 'MongoDB',
+          icon: 'mongodb',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+        },
+        {
+          name: 'Supabase',
+          icon: 'supabase',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg',
+        },
+        {
+          name: 'Firebase',
+          icon: 'firebase',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        },
+      ],
+    },
+
+    {
+      title: 'AI Development',
       accent: 'pink',
       items: [
-        { name: 'Git', icon: 'git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-        { name: 'GitHub', icon: 'github', logo: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg' },
-        { name: 'Android Studio', icon: 'androidstudio', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg' },
-        { name: 'VS Code', icon: 'vscode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
+        {
+          name: 'OpenAI Codex',
+          icon: 'codex',
+          logo: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%3Ctitle%3EOpenAI%20Codex%3C%2Ftitle%3E%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M8.086.457a6.105%206.105%200%200%201%203.046-.415c1.333.153%202.521.72%203.564%201.7a.117.117%200%200%200%20.107.029c1.408-.346%202.762-.224%204.061.366l.063.03.154.076c1.357.703%202.33%201.77%202.918%203.198.278.679.418%201.388.421%202.126a5.655%205.655%200%200%201-.18%201.631.167.167%200%200%200%20.04.155%205.982%205.982%200%200%201%201.578%202.891c.385%201.901-.01%203.615-1.183%205.14l-.182.22a6.063%206.063%200%200%201-2.934%201.851.162.162%200%200%200-.108.102c-.255.736-.511%201.364-.987%201.992-1.199%201.582-2.962%202.462-4.948%202.451-1.583-.008-2.986-.587-4.21-1.736a.145.145%200%200%200-.14-.032c-.518.167-1.04.191-1.604.185a5.924%205.924%200%200%201-2.595-.622%206.058%206.058%200%200%201-2.146-1.781c-.203-.269-.404-.522-.551-.821a7.74%207.74%200%200%201-.495-1.283%206.11%206.11%200%200%201-.017-3.064.166.166%200%200%200%20.008-.074.115.115%200%200%200-.037-.064%205.958%205.958%200%200%201-1.38-2.202%205.196%205.196%200%200%201-.333-1.589%206.915%206.915%200%200%201%20.188-2.132c.45-1.484%201.309-2.648%202.577-3.493.282-.188.55-.334.802-.438.286-.12.573-.22.861-.304a.129.129%200%200%200%20.087-.087A6.016%206.016%200%200%201%205.635%202.31C6.315%201.464%207.132.846%208.086.457zm-.804%207.85a.848.848%200%200%200-1.473.842l1.694%202.965-1.688%202.848a.849.849%200%200%200%201.46.864l1.94-3.272a.849.849%200%200%200%20.007-.854l-1.94-3.393zm5.446%206.24a.849.849%200%200%200%200%201.695h4.848a.849.849%200%200%200%200-1.696h-4.848z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E',
+        },
+        {
+          name: 'Cursor AI',
+          icon: 'cursor',
+          logo: 'https://www.cursor.com/assets/images/logo.svg',
+        },
+        {
+          name: 'Replit AI',
+          icon: 'replit',
+          logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAf0lEQVR4AWNwL/ChK6avhaMW/rdhkAPi/zjwalpYmI7Hwp9D3sJRC/9T10KEpY2gFIkF/4fSwViwHNXz4X9bBjV8vqe+hTYMnPgsBPly1EKSMb19GEzFRIMINmjSv4EF/4dmGTlQikXGo0UbXS0ctZATKUX+hGFYCh2ZrbZRCwFTE8+G4baM9wAAAABJRU5ErkJggg==',
+        },
+      ],
+    },
+  ],
+
+  [
+    {
+      title: 'Tools',
+      accent: 'orange',
+      items: [
+        {
+          name: 'Git',
+          icon: 'git',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
+        },
+        {
+          name: 'GitHub',
+          icon: 'github',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
+        },
+
+        {
+          name: 'Vercel',
+          icon: 'vercel',
+          logo: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png',
+        },
+        {
+          name: 'Android Studio',
+          icon: 'androidstudio',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg',
+        },
+        {
+          name: 'VS Code',
+          icon: 'vscode',
+          logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg',
+        },
       ],
     },
   ],
@@ -70,23 +220,25 @@ const educationItems = [
     location: 'Longowal, Punjab',
     org: 'Sant Longowal Institute of Engineering & Technology',
     detail:
-      'Final-year engineering student building a stronger foundation in frontend development, UI systems, data structures, and practical problem solving.',
+      'Completed B.E. in Computer Science & Engineering with a CGPA of 7.69, building a strong foundation in frontend development, data structures, databases, software development, and practical problem solving.',
   },
+
   {
     title: 'Diploma in Electronics Engineering',
     period: '2020 - 2023',
     location: 'Pilibhit, Uttar Pradesh',
-    org: 'Government Polytechnic Pilibhit',
+    org: 'Government Polytechnic, Pilibhit',
     detail:
-      'Completed diploma with 77.27% and developed the technical discipline that later shaped my shift toward web development.',
+      'Completed Diploma in Electronics Engineering with 77.27%, developing a strong technical foundation and practical engineering skills.',
   },
+
   {
-    title: 'Senior Secondary Education',
-    period: '2018 - 2020',
+    title: 'Senior Secondary (Class XII)',
+    period: '2019 - 2020',
     location: 'Nawabganj, Uttar Pradesh',
     org: 'Shri Krishna Inter College',
     detail:
-      'Built consistency in analytical thinking and academic fundamentals while preparing for engineering studies.',
+      'Completed Senior Secondary education with 68.8%, building strong academic fundamentals before pursuing engineering studies.',
   },
 ]
 
@@ -97,39 +249,53 @@ const careerTracks = [
     status: 'active',
     title: 'Frontend Development',
     summary:
-      'Building modern responsive interfaces with React.js, Next.js, clean component systems, and smooth user interactions.',
+      'Building responsive and modern web interfaces using React.js, Next.js, JavaScript, HTML, CSS, and reusable component-based architecture.',
     priority: 'High',
     load: '100%',
   },
+
   {
     id: '02',
-    name: 'Problem Solving',
-    status: 'in progress',
-    title: 'Problem Solving & DSA',
+    name: 'AI Application Development',
+    status: 'active',
+    title: 'AI & Application Development',
     summary:
-      'Improving logic, debugging, and coding confidence through structured DSA practice and consistent problem solving.',
+      'Building AI-assisted applications and workflows using modern AI development tools, React.js, Next.js, Supabase, and RESTful APIs.',
     priority: 'High',
-    load: '82%',
+    load: '90%',
   },
+
   {
     id: '03',
-    name: 'UI Design Sense',
-    status: 'growing',
-    title: 'UI Design & Visual Polish',
+    name: 'Problem Solving',
+    status: 'active',
+    title: 'Problem Solving & DSA',
     summary:
-      'Learning how to make interfaces feel more premium through hierarchy, spacing, color systems, and motion.',
-    priority: 'Medium',
-    load: '74%',
+      'Strengthening programming and problem-solving skills through data structures, OOPS, DBMS, coding practice, and the GfG 160 problem-solving sprint.',
+    priority: 'High',
+    load: '88%',
   },
+
   {
     id: '04',
-    name: 'Full Stack Growth',
-    status: 'learning',
-    title: 'Full Stack Expansion',
+    name: 'Application Development',
+    status: 'active',
+    title: 'Application Development',
     summary:
-      'Expanding from frontend into backend-aware thinking so I can build more complete product experiences over time.',
+      'Developing practical applications using Flutter and Dart, with experience integrating Firebase and building real-time application experiences.',
     priority: 'Medium',
-    load: '58%',
+    load: '82%',
+  },
+
+  {
+    id: '05',
+    name: 'Backend & Database',
+    status: 'growing',
+    title: 'Backend & Database Integration',
+    summary:
+      'Working with RESTful APIs, MySQL, MongoDB, Supabase, and Firebase to build database-driven and connected applications.',
+    priority: 'Medium',
+    load: '75%',
   },
 ]
 
@@ -147,6 +313,24 @@ const projects = [
   },
 
   {
+    title: 'CRM Suite',
+    label: 'Customer Relationship Management',
+    description:
+      'A modern web-based CRM platform built with React.js, TypeScript, Vite, and Supabase to manage leads, contacts, sales pipelines, customer activities, and team collaboration.',
+    stack: [
+      'React.js',
+      'TypeScript',
+      'Vite',
+      'Supabase',
+      'REST APIs',
+    ],
+    live: 'https://crm-suite.vercel.app/#product',
+    code: 'https://github.com/mohd-kapeel/crm-suite',
+    previewClass: 'project-preview-crm',
+    previewMode: 'crm-suite',
+  },
+
+  {
     title: 'SLIET Mentorship Platform',
     label: 'Mentorship Product',
     description:
@@ -160,14 +344,14 @@ const projects = [
 
   {
     title: 'BolYaar',
-    label: 'Social Platform',
+    label: 'Anonymous Student Social Platform',
     description:
-      'Built as a collaborative student social platform featuring anonymous posts, polls, and realtime interactions with Firebase integration.',
-    stack: ['Flutter', 'Firebase', 'Realtime'],
+      'A student-focused anonymous social platform featuring anonymous posts, polls, realtime interactions, and Firebase integration.',
+    stack: ['Flutter', 'Dart', 'Firebase', 'Realtime'],
     live: githubProfile,
     code: githubProfile,
-    previewClass: 'project-preview-social',
-    previewMode: 'default',
+    previewClass: 'project-preview-bolyaar',
+    previewMode: 'bolyaar',
   },
 ]
 
@@ -178,7 +362,7 @@ const experiences = [
     company: 'SoftechBee',
     mode: 'On-site',
     detail:
-      'Built responsive web interfaces using HTML, CSS, JavaScript, React.js, and Next.js while improving UI consistency, structure, and debugging quality.',
+      'Worked on modern, responsive web applications using HTML5, CSS3, JavaScript, React.js, and Next.js. Developed reusable and maintainable UI components, responsive layouts, interactive user interfaces, and smooth user experiences. Worked with REST APIs and backend integrations, handled application state and data flow, debugged frontend issues, and improved UI consistency and performance. Used Git and GitHub for version control and collaborated with modern development tools and real-world frontend workflows.',
   },
 ]
 
@@ -495,14 +679,17 @@ function App() {
             I&apos;m a <span>{rotatingRoles[roleIndex]}</span>
           </div>
           <p>
-            I&apos;m a frontend developer with a strong focus on clean UI,
-            practical web solutions, and modern React.js experiences. I enjoy
-            working on real-world projects, writing maintainable code, and
-            continuously improving my skills through practice and learning.
+            I&apos;m a recent B.E. Computer Science graduate with hands-on
+            experience in web, AI, and real-time application development. I
+            specialize in React.js, Next.js, JavaScript, and modern frontend
+            development, with additional experience in Flutter, Firebase,
+            Supabase, RESTful APIs, and AI development tools. I enjoy building
+            responsive, practical applications and continuously improving my
+            technical and problem-solving skills.
           </p>
 
           <div className="hero-actions">
-            <a className="primary-btn" href="public/Resume.pdf" download>
+            <a className="primary-btn" href="/Resume.pdf" download>
               Check Resume
             </a>
             <a className="secondary-btn" href="#contact">
@@ -553,28 +740,53 @@ function App() {
         <div className="skills-layout">
           {skillRows.map((row, rowIndex) => (
             <div
-              className={`skills-row ${row.length === 1 ? 'skills-row-single' : ''}`}
+              className={`skills-row ${row.length === 1 ? 'skills-row-single' : ''
+                }`}
               key={`row-${rowIndex}`}
             >
               {row.map((group) => (
-                <div className="skill-group reveal" key={group.title}>
-                  <h3 className={`group-title group-title-${group.accent}`}>{group.title}</h3>
+                <div
+                  className="skill-group reveal"
+                  key={group.title}
+                >
+                  <h3
+                    className={`group-title group-title-${group.accent}`}
+                  >
+                    {group.title}
+                  </h3>
+
                   <div className="hex-grid">
-                    {group.items.map((item, itemIndex) => (
-                      <article
-                        className={`hex-skill hex-skill-${group.accent} skill-reveal ${itemIndex % 2 === 0 ? 'skill-enter-left' : 'skill-enter-right'}`}
-                        key={item.name}
-                      >
-                        <div className={`skill-logo skill-logo-${item.icon}`}>
-                          {item.logo ? (
-                            <img src={item.logo} alt="" className="skill-logo-image" />
-                          ) : (
-                            skillIconMap[item.icon]
-                          )}
-                        </div>
-                        <span>{item.name}</span>
-                      </article>
-                    ))}
+                    {group.items.map(
+                      (item, itemIndex) => (
+                        <article
+                          className={`hex-skill hex-skill-${group.accent} skill-reveal ${itemIndex % 2 === 0
+                            ? 'skill-enter-left'
+                            : 'skill-enter-right'
+                            }`}
+                          key={item.name}
+                        >
+                          <div
+                            className={`skill-logo skill-logo-${item.icon}`}
+                          >
+                            {item.logo ? (
+                              <img
+                                src={item.logo}
+                                alt={`${item.name} logo`}
+                                className="skill-logo-image"
+                                onError={(event) => {
+                                  event.currentTarget.style.display =
+                                    'none'
+                                }}
+                              />
+                            ) : (
+                              skillIconMap[item.icon]
+                            )}
+                          </div>
+
+                          <span>{item.name}</span>
+                        </article>
+                      )
+                    )}
                   </div>
                 </div>
               ))}
@@ -672,257 +884,768 @@ function App() {
       </section>
 
       <section className="section-block" id="projects">
-  <div className="section-title reveal">
-    <h2>Featured Projects</h2>
-    <p>Some of the projects I have worked on with frontend focus</p>
-  </div>
+        <div className="section-title reveal">
+          <h2>Featured Projects</h2>
+          <p>Some of the projects I have worked on with frontend focus</p>
+        </div>
 
-  <div className="project-grid">
-    {projects.map((project) => (
-      <article
-        className="project-card scroll-reveal"
-        key={project.title}
-      >
-        <div className="project-preview">
-          <div
-            className={`project-preview-screen ${project.previewClass}`}
-          >
-            <div className="project-preview-overlay" />
+        <div className="project-grid">
+          {projects.map((project) => (
+            <article
+              className="project-card scroll-reveal"
+              key={project.title}
+            >
+              <div className="project-preview">
+                <div
+                  className={`project-preview-screen ${project.previewClass}`}
+                >
+                  <div className="project-preview-overlay" />
 
-            {/* =========================
-                AI HIRE PRO PREVIEW
-                ========================= */}
-            {project.previewMode === 'ai-hire-pro' ? (
-              <div className="ai-hire-preview">
+                  {/* =========================
+   PROJECT PREVIEWS
+   ========================= */}
 
-                <div className="ai-hire-preview-header">
-                  <div className="ai-hire-preview-logo">
-                    <span className="ai-logo-mark">✦</span>
-                    <strong>AI Hire Pro</strong>
-                  </div>
+                  {project.previewMode === 'ai-hire-pro' ? (
 
-                  <div className="ai-hire-preview-nav">
-                    <span>Dashboard</span>
-                    <span>Jobs</span>
-                    <span>Candidates</span>
-                  </div>
+                    /* =========================
+                       AI HIRE PRO PREVIEW
+                       ========================= */
 
-                  <div className="ai-hire-preview-profile">
-                    MK
-                  </div>
-                </div>
+                    <div className="ai-hire-preview">
 
-                <div className="ai-hire-preview-body">
+                      <div className="ai-hire-preview-header">
 
-                  <div className="ai-hire-preview-left">
+                        <div className="ai-hire-preview-logo">
+                          <span className="ai-logo-mark">✦</span>
+                          <strong>AI Hire Pro</strong>
+                        </div>
 
-                    <span className="ai-hire-preview-badge">
-                      AI-POWERED RECRUITMENT
-                    </span>
+                        <div className="ai-hire-preview-nav">
+                          <span>Dashboard</span>
+                          <span>Jobs</span>
+                          <span>Candidates</span>
+                        </div>
 
-                    <h4>
-                      Hire smarter.
-                      <br />
-                      Hire faster.
-                    </h4>
+                        <div className="ai-hire-preview-profile">
+                          MK
+                        </div>
 
-                    <p>
-                      AI-powered candidate screening and
-                      intelligent recruitment workflows.
-                    </p>
-
-                    <div className="ai-hire-preview-buttons">
-                      <span>Start Hiring</span>
-                      <span>View Candidates</span>
-                    </div>
-
-                  </div>
-
-                  <div className="ai-hire-preview-dashboard">
-
-                    <div className="ai-dashboard-heading">
-                      <span>Candidate Analysis</span>
-                      <b>Live</b>
-                    </div>
-
-                    <div className="ai-match-row">
-
-                      <div className="ai-match-circle">
-                        <strong>94%</strong>
-                        <small>Match</small>
                       </div>
 
-                      <div className="ai-match-info">
-                        <strong>Candidate Match</strong>
-                        <span>
-                          Excellent fit for this role
+
+                      <div className="ai-hire-preview-body">
+
+                        <div className="ai-hire-preview-left">
+
+                          <span className="ai-hire-preview-badge">
+                            AI-POWERED RECRUITMENT
+                          </span>
+
+                          <h4>
+                            Hire smarter.
+                            <br />
+                            Hire faster.
+                          </h4>
+
+                          <p>
+                            AI-powered candidate screening and
+                            intelligent recruitment workflows.
+                          </p>
+
+                          <div className="ai-hire-preview-buttons">
+                            <span>Start Hiring</span>
+                            <span>View Candidates</span>
+                          </div>
+
+                        </div>
+
+
+                        <div className="ai-hire-preview-dashboard">
+
+                          <div className="ai-dashboard-heading">
+                            <span>Candidate Analysis</span>
+                            <b>Live</b>
+                          </div>
+
+                          <div className="ai-match-row">
+
+                            <div className="ai-match-circle">
+                              <strong>94%</strong>
+                              <small>Match</small>
+                            </div>
+
+                            <div className="ai-match-info">
+                              <strong>Candidate Match</strong>
+
+                              <span>
+                                Excellent fit for this role
+                              </span>
+                            </div>
+
+                          </div>
+
+
+                          <div className="ai-analysis-bars">
+
+                            <div>
+                              <span>Skills</span>
+
+                              <i>
+                                <em style={{ width: '92%' }} />
+                              </i>
+                            </div>
+
+
+                            <div>
+                              <span>Experience</span>
+
+                              <i>
+                                <em style={{ width: '84%' }} />
+                              </i>
+                            </div>
+
+
+                            <div>
+                              <span>Education</span>
+
+                              <i>
+                                <em style={{ width: '96%' }} />
+                              </i>
+                            </div>
+
+                          </div>
+
+
+                          <div className="ai-candidate-row">
+
+                            <div className="ai-candidate-avatar">
+                              MK
+                            </div>
+
+                            <div>
+                              <strong>
+                                Candidate Profile
+                              </strong>
+
+                              <span>
+                                Resume analyzed by AI
+                              </span>
+                            </div>
+
+                            <b>94%</b>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                  ) : project.previewMode === 'crm-suite' ? (
+
+                    /* =========================
+                       CRM SUITE PREVIEW
+                       ========================= */
+
+                    <div className="crm-project-preview">
+
+                      <div className="crm-preview-navbar">
+
+                        <div className="crm-brand">
+
+                          <div className="crm-brand-logo">
+                            IM
+                          </div>
+
+                          <strong>
+                            CRM Suite
+                          </strong>
+
+                        </div>
+
+
+                        <div className="crm-nav-links">
+                          <span>Product</span>
+                          <span>How it works</span>
+                          <span>Outcomes</span>
+                          <span>Pricing</span>
+                          <span>FAQs</span>
+                        </div>
+
+
+                        <div className="crm-auth">
+
+                          <span>
+                            Sign in
+                          </span>
+
+                          <button type="button">
+                            Sign out
+                          </button>
+
+                        </div>
+
+                      </div>
+
+
+                      <div className="crm-preview-content">
+
+                        {/* CRM LEFT SIDE */}
+
+                        <div className="crm-preview-copy">
+
+                          <span className="crm-badge">
+                            ● CLOUD-BASED CRM SUITE · POWERED BY INVENTMODEL
+                          </span>
+
+                          <h2>
+                            Manage
+                            <br />
+                            leads. <span>Boost</span>
+                            <br />
+                            sales. <span>Grow</span>
+                            <br />
+                            faster.
+                          </h2>
+
+                          <p>
+                            A connected CRM workspace for leads, customers,
+                            sales activities, follow-ups, quotations, invoices,
+                            teams and business reporting — all in one place.
+                          </p>
+
+
+                          <div className="crm-preview-actions">
+
+                            <a
+                              href="https://crm-suite.vercel.app/#product"
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              Explore CRM Suite →
+                            </a>
+
+
+                            <a
+                              href="https://crm-suite.vercel.app/#product"
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              See capabilities →
+                            </a>
+
+                          </div>
+
+
+                          <div className="crm-team">
+
+                            <span>IM</span>
+                            <span>SA</span>
+                            <span>BD</span>
+                            <span>TM</span>
+
+                            <small>
+                              Built for sales, operations and customer teams.
+                            </small>
+
+                          </div>
+
+                        </div>
+
+
+                        {/* CRM DASHBOARD */}
+
+                        <div className="crm-preview-dashboard">
+
+                          <div className="crm-dashboard-window">
+
+                            <div className="crm-window-bar">
+
+                              <span />
+                              <span />
+                              <span />
+
+                              <small>
+                                crm-suite.vercel.app / dashboard
+                              </small>
+
+                            </div>
+
+
+                            <div className="crm-dashboard-body">
+
+                              {/* SIDEBAR */}
+
+                              <aside className="crm-sidebar">
+
+                                <strong>
+                                  CRM
+                                </strong>
+
+                                <div className="crm-sidebar-active">
+                                  Dashboard
+                                </div>
+
+                                <div>
+                                  All Leads
+                                </div>
+
+                                <div>
+                                  Active Leads
+                                </div>
+
+                                <div>
+                                  Hot Leads
+                                </div>
+
+                                <div>
+                                  Lost Leads
+                                </div>
+
+                                <div>
+                                  Converted Leads
+                                </div>
+
+                                <br />
+
+                                <div>
+                                  Pipeline
+                                </div>
+
+                                <div>
+                                  My Team
+                                </div>
+
+                                <div>
+                                  Team Management
+                                </div>
+
+                                <br />
+
+                                <div>
+                                  Bulk Upload Leads
+                                </div>
+
+                                <div>
+                                  Bulk Upload Logs
+                                </div>
+
+                              </aside>
+
+
+                              {/* DASHBOARD CONTENT */}
+
+                              <main className="crm-dashboard-main">
+
+                                <div className="crm-dashboard-header">
+
+                                  <div>
+
+                                    <small>
+                                      OVERVIEW
+                                    </small>
+
+                                    <h3>
+                                      Dashboard
+                                    </h3>
+
+                                  </div>
+
+                                  <span className="crm-user">
+                                    MK
+                                  </span>
+
+                                </div>
+
+
+                                {/* STATISTICS */}
+
+                                <div className="crm-stat-grid">
+
+                                  <div>
+                                    <small>
+                                      Total Leads
+                                    </small>
+
+                                    <strong>
+                                      1908
+                                    </strong>
+                                  </div>
+
+
+                                  <div>
+                                    <small>
+                                      Converted Leads
+                                    </small>
+
+                                    <strong>
+                                      188
+                                    </strong>
+                                  </div>
+
+
+                                  <div>
+                                    <small>
+                                      Conversion Rate
+                                    </small>
+
+                                    <strong>
+                                      10.0%
+                                    </strong>
+                                  </div>
+
+
+                                  <div>
+                                    <small>
+                                      Total Contacts
+                                    </small>
+
+                                    <strong>
+                                      0
+                                    </strong>
+                                  </div>
+
+                                </div>
+
+
+                                {/* LOWER DASHBOARD */}
+
+                                <div className="crm-dashboard-grid">
+
+                                  <div className="crm-panel">
+
+                                    <strong>
+                                      Recent Activities
+                                    </strong>
+
+                                    <div>
+                                      ● Lead activity recorded
+                                    </div>
+
+                                    <div>
+                                      ● Candidate details shared
+                                    </div>
+
+                                    <div>
+                                      ● Follow-up scheduled
+                                    </div>
+
+                                    <div>
+                                      ● Customer activity updated
+                                    </div>
+
+                                    <div>
+                                      ● New lead added
+                                    </div>
+
+                                  </div>
+
+
+                                  <div className="crm-panel">
+
+                                    <strong>
+                                      Leads by Status
+                                    </strong>
+
+                                    <div>
+                                      <span>
+                                        Lost
+                                      </span>
+
+                                      <b>
+                                        147
+                                      </b>
+                                    </div>
+
+
+                                    <div>
+                                      <span>
+                                        Proposal
+                                      </span>
+
+                                      <b>
+                                        3
+                                      </b>
+                                    </div>
+
+
+                                    <div>
+                                      <span>
+                                        Qualified
+                                      </span>
+
+                                      <b>
+                                        1
+                                      </b>
+                                    </div>
+
+
+                                    <div>
+                                      <span>
+                                        Converted
+                                      </span>
+
+                                      <b>
+                                        188
+                                      </b>
+                                    </div>
+
+                                  </div>
+
+                                </div>
+
+                              </main>
+
+                            </div>
+
+                          </div>
+
+
+                          {/* FLOATING CARDS */}
+
+                          <div className="crm-floating-card crm-live-card">
+
+                            <strong>
+                              ◯ Live visibility
+                            </strong>
+
+                            <small>
+                              Leads · Pipeline · Teams
+                            </small>
+
+                          </div>
+
+
+                          <div className="crm-floating-card crm-work-card">
+
+                            <strong>
+                              ⚡ Less manual work
+                            </strong>
+
+                            <small>
+                              Automate daily operations
+                            </small>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                  ) : project.previewMode === 'mentor-home' ? (
+
+                    /* =========================
+                       SLIET MENTORSHIP PREVIEW
+                       ========================= */
+
+                    <div className="project-preview-ui project-preview-ui-mentor">
+
+                      <div className="project-preview-topline">
+
+                        <span className="project-preview-brand">
+                          Sliet Mentors
                         </span>
+
+                        <span className="project-preview-mini-chip">
+                          Live
+                        </span>
+
+                      </div>
+
+
+                      <span className="project-preview-chip">
+                        {project.label}
+                      </span>
+
+
+                      <div className="project-preview-heading">
+
+                        <strong>
+                          Meet Your College Mentor
+                        </strong>
+
+                        <span>
+                          Book sessions, explore mentors, and grow faster.
+                        </span>
+
+                      </div>
+
+
+                      <div className="project-preview-search">
+
+                        <span className="project-preview-search-field">
+                          Search mentors or skills
+                        </span>
+
+                        <span className="project-preview-search-button">
+                          Search
+                        </span>
+
                       </div>
 
                     </div>
 
-                    <div className="ai-analysis-bars">
 
-                      <div>
-                        <span>Skills</span>
-                        <i>
-                          <em style={{ width: '92%' }} />
-                        </i>
+                  ) : project.previewMode === 'bolyaar' ? (
+
+                    /* =========================
+                       BOLYAAR PREVIEW
+                       ========================= */
+
+                    <div className="bolyaar-project-preview">
+
+                      <div className="bolyaar-preview-header">
+
+                        <div>
+
+                          <span className="bolyaar-preview-label">
+                            STUDENT SOCIAL PLATFORM
+                          </span>
+
+                          <h3>
+                            BolYaar
+                          </h3>
+
+                          <p>
+                            Anonymous campus conversations,
+                            polls and real-time student interaction.
+                          </p>
+
+                        </div>
+
+
+                        <div className="bolyaar-mobile-badge">
+                          Flutter App
+                        </div>
+
                       </div>
 
-                      <div>
-                        <span>Experience</span>
-                        <i>
-                          <em style={{ width: '84%' }} />
-                        </i>
+
+                      <div className="bolyaar-preview-image-wrap">
+
+                        <img
+                          src="/apps/bolyaarPreview.jpeg"
+                          alt="BolYaar mobile application preview"
+                          className="bolyaar-preview-image"
+                        />
+
                       </div>
 
-                      <div>
-                        <span>Education</span>
-                        <i>
-                          <em style={{ width: '96%' }} />
-                        </i>
+
+                      <div className="bolyaar-preview-footer">
+
+                        <span>
+                          Flutter
+                        </span>
+
+                        <span>
+                          Dart
+                        </span>
+
+                        <span>
+                          Firebase
+                        </span>
+
+                        <span>
+                          Realtime
+                        </span>
+
                       </div>
 
                     </div>
 
-                    <div className="ai-candidate-row">
 
-                      <div className="ai-candidate-avatar">
-                        MK
+                  ) : (
+
+                    /* =========================
+                       DEFAULT PREVIEW
+                       ========================= */
+
+                    <div className="project-preview-ui">
+
+                      <span className="project-preview-chip">
+                        {project.label}
+                      </span>
+
+                      <div className="project-preview-bar" />
+
+                      <div className="project-preview-lines">
+
+                        <span />
+                        <span />
+                        <span />
+
                       </div>
-
-                      <div>
-                        <strong>Candidate Profile</strong>
-                        <span>Resume analyzed by AI</span>
-                      </div>
-
-                      <b>94%</b>
 
                     </div>
 
+                  )}
+
+                  <div className="project-preview-content">
+                    <strong>{project.title}</strong>
+
+                    <span>
+                      {project.stack.join(' • ')}
+                    </span>
                   </div>
+
                 </div>
               </div>
 
-            ) : project.previewMode === 'mentor-home' ? (
+              <div className="project-body">
 
-              /* =========================
-                 SLIET MENTORSHIP PREVIEW
-                 ========================= */
-              <div className="project-preview-ui project-preview-ui-mentor">
+                <h3>{project.title}</h3>
 
-                <div className="project-preview-topline">
-                  <span className="project-preview-brand">
-                    Sliet Mentors
-                  </span>
+                <p>{project.description}</p>
 
-                  <span className="project-preview-mini-chip">
-                    Live
-                  </span>
+                <div className="project-tags">
+                  {project.stack.map((item) => (
+                    <span key={item}>
+                      {item}
+                    </span>
+                  ))}
                 </div>
 
-                <span className="project-preview-chip">
-                  {project.label}
-                </span>
+                <div className="project-links">
 
-                <div className="project-preview-heading">
-                  <strong>
-                    Meet Your College Mentor
-                  </strong>
+                  {project.title === 'BolYaar' ? (
+                    <a
+                      href={project.live}
+                      download="BolYaar.apk"
+                    >
+                      Live Demo ↓
+                    </a>
+                  ) : (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Live Demo →
+                    </a>
+                  )}
 
-                  <span>
-                    Book sessions, explore mentors, and grow faster.
-                  </span>
-                </div>
+                  <a
+                    href={project.code}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Source Code
+                  </a>
 
-                <div className="project-preview-search">
-
-                  <span className="project-preview-search-field">
-                    Search mentors or skills
-                  </span>
-
-                  <span className="project-preview-search-button">
-                    Search
-                  </span>
-
-                </div>
-
-              </div>
-
-            ) : (
-
-              /* =========================
-                 DEFAULT / BOLYAAR PREVIEW
-                 ========================= */
-              <div className="project-preview-ui">
-
-                <span className="project-preview-chip">
-                  {project.label}
-                </span>
-
-                <div className="project-preview-bar" />
-
-                <div className="project-preview-lines">
-                  <span />
-                  <span />
-                  <span />
                 </div>
 
               </div>
-            )}
 
-            <div className="project-preview-content">
-              <strong>{project.title}</strong>
-
-              <span>
-                {project.stack.join(' • ')}
-              </span>
-            </div>
-
-          </div>
+            </article>
+          ))}
         </div>
-
-        <div className="project-body">
-
-          <h3>{project.title}</h3>
-
-          <p>{project.description}</p>
-
-          <div className="project-tags">
-            {project.stack.map((item) => (
-              <span key={item}>
-                {item}
-              </span>
-            ))}
-          </div>
-
-          <div className="project-links">
-
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Live Demo
-            </a>
-
-            <a
-              href={project.code}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Source Code
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-    ))}
-  </div>
-</section>
+      </section>
       <section className="section-block" id="experience">
         <div className="section-title reveal">
           <h2>My Experience</h2>
