@@ -501,7 +501,7 @@ function App() {
           </p>
 
           <div className="hero-actions">
-            <a className="primary-btn" href="/Resume.pdf" download>
+            <a className="primary-btn" href="public/Resume.pdf" download>
               Check Resume
             </a>
             <a className="secondary-btn" href="#contact">
