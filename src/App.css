@@ -9773,3 +9773,468 @@ img {
     filter: none;
   }
 }
+
+/* =========================================================
+   FINAL BOLYAAR PREVIEW FIX
+   Add at the VERY END of src/App.css
+   ========================================================= */
+
+.project-card .project-preview-social {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+
+  transform: none !important;
+}
+
+/* Main BolYaar container */
+
+.project-card .project-preview-social .bolyaar-project-preview {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  max-width: 100% !important;
+  max-height: 100% !important;
+
+  margin: 0 !important;
+  padding: 22px 24px !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+
+  transform: none !important;
+}
+
+/* =========================================================
+   BOLYAAR TEXT — KEEP INSIDE LEFT SIDE
+   ========================================================= */
+
+.project-card .bolyaar-preview-header {
+  position: relative !important;
+
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  width: calc(100% - 150px) !important;
+  max-width: calc(100% - 150px) !important;
+
+  min-width: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  z-index: 10 !important;
+
+  overflow: hidden !important;
+
+  box-sizing: border-box !important;
+}
+
+.project-card .bolyaar-preview-label {
+  display: block !important;
+
+  margin: 0 0 7px !important;
+
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+
+  font-size: 7px !important;
+  line-height: 1.2 !important;
+}
+
+.project-card .bolyaar-preview-header h3 {
+  display: block !important;
+
+  margin: 0 !important;
+
+  font-size: 30px !important;
+  line-height: 1 !important;
+
+  white-space: nowrap !important;
+}
+
+.project-card .bolyaar-preview-header p {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin: 9px 0 0 !important;
+
+  font-size: 9px !important;
+  line-height: 1.45 !important;
+
+  overflow: hidden !important;
+}
+
+/* =========================================================
+   FLUTTER BADGE
+   ========================================================= */
+
+.project-card .bolyaar-mobile-badge {
+  position: absolute !important;
+
+  top: 18px !important;
+  right: 22px !important;
+
+  z-index: 15 !important;
+
+  padding: 6px 9px !important;
+
+  font-size: 7px !important;
+
+  white-space: nowrap !important;
+}
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+.project-card .bolyaar-preview-image-wrap {
+  position: absolute !important;
+
+  top: 40px !important;
+  right: 22px !important;
+
+  z-index: 8 !important;
+
+  width: 105px !important;
+  height: 180px !important;
+
+  max-width: 105px !important;
+  max-height: 180px !important;
+
+  margin: 0 !important;
+  padding: 3px !important;
+
+  overflow: hidden !important;
+
+  border-radius: 16px !important;
+
+  box-sizing: border-box !important;
+
+  transform: rotate(-2deg) !important;
+}
+
+.project-card .bolyaar-preview-image {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: 100% !important;
+  max-height: 100% !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  margin: 0 !important;
+
+  border-radius: 13px !important;
+}
+
+/* =========================================================
+   TECHNOLOGY TAGS
+   ========================================================= */
+
+.project-card .bolyaar-preview-footer {
+  position: absolute !important;
+
+  left: 24px !important;
+  right: 145px !important;
+  bottom: 17px !important;
+
+  z-index: 12 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+
+  gap: 5px !important;
+
+  max-width: none !important;
+  max-height: 32px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+}
+
+.project-card .bolyaar-preview-footer span {
+  flex: 0 0 auto !important;
+
+  padding: 5px 8px !important;
+
+  font-size: 7px !important;
+  line-height: 1 !important;
+
+  white-space: nowrap !important;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .project-card .bolyaar-project-preview {
+    padding: 18px 20px !important;
+  }
+
+  .project-card .bolyaar-preview-header {
+    width: calc(100% - 125px) !important;
+    max-width: calc(100% - 125px) !important;
+  }
+
+  .project-card .bolyaar-preview-header h3 {
+    font-size: 26px !important;
+  }
+
+  .project-card .bolyaar-preview-header p {
+    font-size: 8px !important;
+  }
+
+  .project-card .bolyaar-preview-image-wrap {
+    right: 16px !important;
+
+    width: 92px !important;
+    height: 175px !important;
+  }
+
+  .project-card .bolyaar-preview-footer {
+    left: 20px !important;
+    right: 120px !important;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .project-card .bolyaar-project-preview {
+    padding: 16px !important;
+  }
+
+  .project-card .bolyaar-preview-header {
+    width: calc(100% - 105px) !important;
+    max-width: calc(100% - 105px) !important;
+  }
+
+  .project-card .bolyaar-preview-label {
+    font-size: 5.5px !important;
+  }
+
+  .project-card .bolyaar-preview-header h3 {
+    font-size: 22px !important;
+  }
+
+  .project-card .bolyaar-preview-header p {
+    font-size: 6.5px !important;
+    line-height: 1.35 !important;
+  }
+
+  .project-card .bolyaar-mobile-badge {
+    top: 13px !important;
+    right: 13px !important;
+
+    padding: 5px 7px !important;
+
+    font-size: 5.5px !important;
+  }
+
+  .project-card .bolyaar-preview-image-wrap {
+    top: 36px !important;
+    right: 10px !important;
+
+    width: 82px !important;
+    height: 160px !important;
+
+    max-width: 82px !important;
+    max-height: 160px !important;
+  }
+
+  .project-card .bolyaar-preview-footer {
+    left: 16px !important;
+    right: 105px !important;
+    bottom: 10px !important;
+
+    max-height: 27px !important;
+
+    gap: 4px !important;
+  }
+
+  .project-card .bolyaar-preview-footer span {
+    padding: 4px 6px !important;
+    font-size: 5.5px !important;
+  }
+}
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .project-card .bolyaar-project-preview {
+    padding: 13px !important;
+  }
+
+  .project-card .bolyaar-preview-header {
+    width: calc(100% - 90px) !important;
+    max-width: calc(100% - 90px) !important;
+  }
+
+  .project-card .bolyaar-preview-header h3 {
+    font-size: 20px !important;
+  }
+
+  .project-card .bolyaar-preview-header p {
+    font-size: 6px !important;
+  }
+
+  .project-card .bolyaar-mobile-badge {
+    top: 10px !important;
+    right: 9px !important;
+  }
+
+  .project-card .bolyaar-preview-image-wrap {
+    top: 33px !important;
+    right: 8px !important;
+
+    width: 72px !important;
+    height: 150px !important;
+  }
+
+  .project-card .bolyaar-preview-footer {
+    left: 13px !important;
+    right: 92px !important;
+    bottom: 8px !important;
+  }
+}
+
+/* =========================================================
+   BOLYAAR — FONT SIZE FIX
+   ========================================================= */
+
+.project-card .bolyaar-preview-label {
+  font-size: 9px !important;
+  line-height: 1.2 !important;
+}
+
+.project-card .bolyaar-preview-header h3 {
+  font-size: 34px !important;
+  line-height: 1 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.project-card .bolyaar-preview-header p {
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+}
+
+.project-card .bolyaar-mobile-badge {
+  font-size: 9px !important;
+  padding: 7px 10px !important;
+}
+
+.project-card .bolyaar-preview-footer span {
+  font-size: 8px !important;
+  padding: 6px 9px !important;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+  .project-card .bolyaar-preview-label {
+    font-size: 8px !important;
+  }
+
+  .project-card .bolyaar-preview-header h3 {
+    font-size: 30px !important;
+  }
+
+  .project-card .bolyaar-preview-header p {
+    font-size: 10px !important;
+  }
+
+  .project-card .bolyaar-mobile-badge {
+    font-size: 8px !important;
+  }
+
+  .project-card .bolyaar-preview-footer span {
+    font-size: 7px !important;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+
+  .project-card .bolyaar-preview-label {
+    font-size: 7px !important;
+  }
+
+  .project-card .bolyaar-preview-header h3 {
+    font-size: 26px !important;
+  }
+
+  .project-card .bolyaar-preview-header p {
+    font-size: 8px !important;
+    line-height: 1.4 !important;
+  }
+
+  .project-card .bolyaar-mobile-badge {
+    font-size: 7px !important;
+  }
+
+  .project-card .bolyaar-preview-footer span {
+    font-size: 6.5px !important;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 430px) {
+
+  .project-card .bolyaar-preview-label {
+    font-size: 6.5px !important;
+  }
+
+  .project-card .bolyaar-preview-header h3 {
+    font-size: 23px !important;
+  }
+
+  .project-card .bolyaar-preview-header p {
+    font-size: 7px !important;
+  }
+
+  .project-card .bolyaar-mobile-badge {
+    font-size: 6px !important;
+  }
+
+  .project-card .bolyaar-preview-footer span {
+    font-size: 6px !important;
+  }
+}

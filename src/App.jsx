@@ -343,16 +343,16 @@ const projects = [
   },
 
   {
-    title: 'BolYaar',
-    label: 'Anonymous Student Social Platform',
-    description:
-      'A student-focused anonymous social platform featuring anonymous posts, polls, realtime interactions, and Firebase integration.',
-    stack: ['Flutter', 'Dart', 'Firebase', 'Realtime'],
-    live: githubProfile,
-    code: githubProfile,
-    previewClass: 'project-preview-bolyaar',
-    previewMode: 'bolyaar',
-  },
+  title: 'BolYaar',
+  label: 'Social Platform',
+  description:
+    'Built as a collaborative student social platform featuring anonymous posts, polls, and realtime interactions with Firebase integration.',
+  stack: ['Flutter', 'Dart', 'Firebase', 'Realtime', 'Android'],
+  live: '/apps/BolYaar.apk',
+  code: githubProfile,
+  previewClass: 'project-preview-social',
+  previewMode: 'bolyaar',
+},
 ]
 
 const experiences = [
