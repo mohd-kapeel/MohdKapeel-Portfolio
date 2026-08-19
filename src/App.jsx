@@ -13,12 +13,13 @@ const navItems = [
 ]
 
 const rotatingRoles = [
-  'Frontend Developer',
-  'React Developer',
-  'Next.js Learner',
-  'UI Focused Builder',
-  'App Developer',
-]
+  "Frontend Developer",
+  "React.js Developer",
+  "Next.js Developer",
+  "Software Developer",
+  "AI Application Builder",
+  "Flutter Developer",
+];
 
 const githubProfile = 'https://github.com/mohd-kapeel'
 const skillRows = [
