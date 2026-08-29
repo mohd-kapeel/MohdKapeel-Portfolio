@@ -62,6 +62,10 @@ Percentage: 68.8%
 `,
   },
 
+  /* =======================================================
+     SKILLS
+     ======================================================= */
+
   skills: {
     programming: [
       "C",
@@ -111,6 +115,10 @@ Percentage: 68.8%
     ],
   },
 
+  /* =======================================================
+     INTERNSHIP
+     ======================================================= */
+
   internship: {
     company: "Invent Model Technology Solutions",
 
@@ -126,6 +134,10 @@ application workflows, API integration, database-driven
 features, debugging and improving user experiences.
 `,
   },
+
+  /* =======================================================
+     PROJECTS
+     ======================================================= */
 
   projects: {
     aiHirePro: {
@@ -327,6 +339,10 @@ through an interactive developer-focused interface.
     },
   },
 
+  /* =======================================================
+     ACHIEVEMENTS
+     ======================================================= */
+
   achievements: [
     "98.86 percentile in Naukri Campus Young Turks 2024",
     "Completed GfG 160 – 160 Days of Problem Solving by GeeksforGeeks",
@@ -334,11 +350,19 @@ through an interactive developer-focused interface.
     "Analyzed Fibre Channel network topologies and data routing structures in advanced labs",
   ],
 
+  /* =======================================================
+     POSITIONS
+     ======================================================= */
+
   positions: [
     "SLIET Alumni Association — Active Member",
     "SLIET Software Development Club — Active Member",
     "TechFest’24 (Plexus) — Member",
   ],
+
+  /* =======================================================
+     CAREER
+     ======================================================= */
 
   career: `
 Mohd Kapeel is interested in Frontend Development,
@@ -366,11 +390,16 @@ const normalize = (text = "") =>
     .replace(/\s+/g, " ")
     .trim();
 
-const hasAny = (text, words) =>
-  words.some((word) => text.includes(word));
 
-const formatList = (items) =>
+const hasAny = (text, words) =>
+  words.some((word) =>
+    text.includes(normalize(word))
+  );
+
+
+const formatList = (items = []) =>
   items.map((item) => `• ${item}`).join("\n");
+
 
 const projectResponse = (project) => `
 ${project.name}
@@ -393,6 +422,8 @@ ${
 
 /* =========================================================
    RESPONSE ENGINE
+   IMPORTANT:
+   Specific projects MUST come before generic AI.
    ========================================================= */
 
 function getBotResponse(question) {
@@ -403,7 +434,9 @@ function getBotResponse(question) {
   }
 
 
-  /* GREETING */
+  /* =======================================================
+     GREETING
+     ======================================================= */
 
   if (
     q === "hi" ||
@@ -444,7 +477,9 @@ Try asking:
   }
 
 
-  /* THANK YOU */
+  /* =======================================================
+     THANK YOU
+     ======================================================= */
 
   if (
     q.includes("thank you") ||
@@ -459,7 +494,9 @@ Feel free to ask me anything about Mohd Kapeel.
   }
 
 
-  /* ABOUT */
+  /* =======================================================
+     ABOUT
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -497,7 +534,9 @@ Development and Software Development opportunities.
   }
 
 
-  /* SUMMARY */
+  /* =======================================================
+     SUMMARY
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -513,7 +552,129 @@ Development and Software Development opportunities.
   }
 
 
-  /* SKILLS */
+  /* =======================================================
+     PROJECTS - SPECIFIC FIRST
+     ======================================================= */
+
+  /* AI HIRE PRO */
+
+  if (
+    hasAny(q, [
+      "ai hire pro",
+      "ai hire",
+      "aihirepro",
+      "hire pro",
+      "recruitment platform",
+      "recruitment project",
+      "hiring platform",
+      "recruiter dashboard",
+      "candidate platform",
+      "candidate screening",
+      "candidate sourcing",
+      "candidate evaluation",
+    ])
+  ) {
+    return projectResponse(
+      kapeelInfo.projects.aiHirePro
+    );
+  }
+
+
+  /* CRM SUITE */
+
+  if (
+    hasAny(q, [
+      "crm suite",
+      "crm",
+      "customer relationship",
+      "customer relationship management",
+      "crm project",
+      "sales pipeline",
+      "lead management",
+      "customer management",
+    ])
+  ) {
+    return projectResponse(
+      kapeelInfo.projects.crmSuite
+    );
+  }
+
+
+  /* HRMS */
+
+  if (
+    hasAny(q, [
+      "hrms",
+      "human resource",
+      "human resources",
+      "hr management",
+      "hr project",
+      "employee management",
+    ])
+  ) {
+    return projectResponse(
+      kapeelInfo.projects.hrms
+    );
+  }
+
+
+  /* MENTORSHIP */
+
+  if (
+    hasAny(q, [
+      "mentorship",
+      "mentor platform",
+      "sliet mentorship",
+      "student mentor",
+    ])
+  ) {
+    return projectResponse(
+      kapeelInfo.projects.mentorship
+    );
+  }
+
+
+  /* PROCTORING */
+
+  if (
+    hasAny(q, [
+      "proctoring",
+      "proctor",
+      "exam monitoring",
+      "online exam",
+      "exam project",
+      "face detection",
+      "blink detection",
+      "phone detection",
+      "gaze",
+      "head pose",
+    ])
+  ) {
+    return projectResponse(
+      kapeelInfo.projects.proctoring
+    );
+  }
+
+
+  /* PORTFOLIO */
+
+  if (
+    hasAny(q, [
+      "portfolio",
+      "portfolio website",
+      "personal website",
+      "personal portfolio",
+    ])
+  ) {
+    return projectResponse(
+      kapeelInfo.projects.portfolio
+    );
+  }
+
+
+  /* =======================================================
+     SKILLS
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -554,7 +715,9 @@ ${formatList(kapeelInfo.skills.core)}
   }
 
 
-  /* FRONTEND */
+  /* =======================================================
+     FRONTEND
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -578,7 +741,9 @@ component-based and user-friendly web applications.
   }
 
 
-  /* REACT */
+  /* =======================================================
+     REACT
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -600,7 +765,9 @@ using React-based development.
   }
 
 
-  /* NEXT.JS */
+  /* =======================================================
+     NEXT.JS
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -615,13 +782,14 @@ Next.js is one of Mohd Kapeel's main frontend frameworks.
 He uses Next.js for modern web application development,
 responsive interfaces and application workflows.
 
-AI Hire Pro and CRM Suite are examples of projects
-using modern frontend frameworks.
+AI Hire Pro is an example of a project using Next.js.
 `.trim();
   }
 
 
-  /* JAVASCRIPT / TYPESCRIPT */
+  /* =======================================================
+     JAVASCRIPT / TYPESCRIPT
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -641,13 +809,20 @@ interactive and maintainable web applications.
   }
 
 
-  /* AI */
+  /* =======================================================
+     GENERIC AI
+     IMPORTANT:
+     There is NO plain "ai" condition here.
+     Otherwise "AI Hire Pro" would match this section.
+     ======================================================= */
 
   if (
     hasAny(q, [
-      "ai",
       "artificial intelligence",
       "ai tools",
+      "ai development",
+      "ai assisted development",
+      "ai assistance",
       "openai",
       "codex",
       "cursor",
@@ -662,13 +837,15 @@ AI tools include:
 
 ${formatList(kapeelInfo.skills.ai)}
 
-He also worked on AI-powered application development,
+He has also worked on AI-powered application development,
 including the AI Hire Pro recruitment platform.
 `.trim();
   }
 
 
-  /* DATABASE / API */
+  /* =======================================================
+     DATABASE / API
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -699,7 +876,9 @@ data management and API-driven workflows.
   }
 
 
-  /* EDUCATION */
+  /* =======================================================
+     EDUCATION
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -727,7 +906,9 @@ ${kapeelInfo.education.school.trim()}
   }
 
 
-  /* B.E. / SLIET */
+  /* =======================================================
+     B.E. / SLIET
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -746,7 +927,9 @@ ${kapeelInfo.education.school.trim()}
   }
 
 
-  /* DIPLOMA */
+  /* =======================================================
+     DIPLOMA
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -760,7 +943,9 @@ ${kapeelInfo.education.school.trim()}
   }
 
 
-  /* EXPERIENCE */
+  /* =======================================================
+     EXPERIENCE
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -786,7 +971,9 @@ during his internship experience.
   }
 
 
-  /* INTERNSHIP */
+  /* =======================================================
+     INTERNSHIP
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -808,7 +995,9 @@ ${kapeelInfo.internship.description.trim()}
   }
 
 
-  /* PROJECT LIST */
+  /* =======================================================
+     PROJECT LIST
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -844,108 +1033,9 @@ Mohd Kapeel has worked on several projects:
   }
 
 
-  /* AI HIRE PRO */
-
-  if (
-    hasAny(q, [
-      "ai hire pro",
-      "ai hire",
-      "aihirepro",
-      "recruitment platform",
-      "recruitment project",
-      "hiring platform",
-      "recruiter dashboard",
-      "candidate platform",
-      "candidate screening",
-    ])
-  ) {
-    return projectResponse(kapeelInfo.projects.aiHirePro);
-  }
-
-
-  /* CRM SUITE */
-
-  if (
-    hasAny(q, [
-      "crm",
-      "crm suite",
-      "customer relationship",
-      "customer relationship management",
-      "crm project",
-      "sales pipeline",
-      "lead management",
-      "customer management",
-    ])
-  ) {
-    return projectResponse(kapeelInfo.projects.crmSuite);
-  }
-
-
-  /* HRMS */
-
-  if (
-    hasAny(q, [
-      "hrms",
-      "human resource",
-      "human resources",
-      "hr management",
-      "hr project",
-      "employee management",
-    ])
-  ) {
-    return projectResponse(kapeelInfo.projects.hrms);
-  }
-
-
-  /* MENTORSHIP */
-
-  if (
-    hasAny(q, [
-      "mentorship",
-      "mentor platform",
-      "sliet mentorship",
-      "student mentor",
-    ])
-  ) {
-    return projectResponse(kapeelInfo.projects.mentorship);
-  }
-
-
-  /* PROCTORING */
-
-  if (
-    hasAny(q, [
-      "proctoring",
-      "proctor",
-      "exam monitoring",
-      "online exam",
-      "exam project",
-      "face detection",
-      "blink detection",
-      "phone detection",
-      "gaze",
-      "head pose",
-    ])
-  ) {
-    return projectResponse(kapeelInfo.projects.proctoring);
-  }
-
-
-  /* PORTFOLIO */
-
-  if (
-    hasAny(q, [
-      "portfolio",
-      "portfolio website",
-      "personal website",
-      "personal portfolio",
-    ])
-  ) {
-    return projectResponse(kapeelInfo.projects.portfolio);
-  }
-
-
-  /* ACHIEVEMENTS */
+  /* =======================================================
+     ACHIEVEMENTS
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -967,7 +1057,9 @@ ${formatList(kapeelInfo.achievements)}
   }
 
 
-  /* POSITIONS */
+  /* =======================================================
+     POSITIONS
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -990,7 +1082,9 @@ ${formatList(kapeelInfo.positions)}
   }
 
 
-  /* CAREER */
+  /* =======================================================
+     CAREER
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -1013,7 +1107,9 @@ ${formatList(kapeelInfo.positions)}
   }
 
 
-  /* CONTACT */
+  /* =======================================================
+     CONTACT
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -1043,7 +1139,9 @@ ${kapeelInfo.github}
   }
 
 
-  /* EMAIL */
+  /* =======================================================
+     EMAIL
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -1061,7 +1159,9 @@ ${kapeelInfo.email}
   }
 
 
-  /* PHONE */
+  /* =======================================================
+     PHONE
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -1079,7 +1179,9 @@ ${kapeelInfo.phone}
   }
 
 
-  /* GITHUB */
+  /* =======================================================
+     GITHUB
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -1100,7 +1202,9 @@ ${kapeelInfo.github}
   }
 
 
-  /* LINKEDIN */
+  /* =======================================================
+     LINKEDIN
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -1116,7 +1220,9 @@ ${kapeelInfo.linkedin}
   }
 
 
-  /* LOCATION */
+  /* =======================================================
+     LOCATION
+     ======================================================= */
 
   if (
     hasAny(q, [
@@ -1130,7 +1236,9 @@ ${kapeelInfo.linkedin}
   }
 
 
-  /* FALLBACK */
+  /* =======================================================
+     FALLBACK
+     ======================================================= */
 
   return `
 I'm Kapeel AI 🤖.
@@ -1219,7 +1327,6 @@ export default function KapeelChatbot() {
       const now = audioContext.currentTime;
 
       if (type === "user") {
-        /* User send sound */
         oscillator.type = "sine";
 
         oscillator.frequency.setValueAtTime(
@@ -1250,7 +1357,6 @@ export default function KapeelChatbot() {
         oscillator.start(now);
         oscillator.stop(now + 0.12);
       } else {
-        /* AI response sound */
         oscillator.type = "sine";
 
         oscillator.frequency.setValueAtTime(
@@ -1336,7 +1442,7 @@ export default function KapeelChatbot() {
     const botAnswer =
       getBotResponse(question);
 
-    /* 🔊 USER SEND SOUND */
+    /* USER SEND SOUND */
     playSound("user");
 
     setMessages((previous) => [
@@ -1351,12 +1457,13 @@ export default function KapeelChatbot() {
     setIsTyping(true);
 
 
-    /* Small response delay */
+    /* =====================================================
+       RESPONSE DELAY
+       ===================================================== */
 
     responseTimeoutRef.current =
       setTimeout(() => {
-
-        /* 🔊 AI RESPONSE SOUND */
+        /* AI RESPONSE SOUND */
         playSound("bot");
 
         setMessages((previous) => [
@@ -1374,7 +1481,6 @@ export default function KapeelChatbot() {
 
         typingTimerRef.current =
           setInterval(() => {
-
             currentText +=
               botAnswer.charAt(
                 characterIndex
@@ -1467,7 +1573,9 @@ export default function KapeelChatbot() {
       {open && (
         <div className="kapeel-chat-window">
 
-          {/* HEADER */}
+          {/* =================================================
+              HEADER
+              ================================================= */}
 
           <div className="kapeel-chat-header">
 
@@ -1501,7 +1609,9 @@ export default function KapeelChatbot() {
           </div>
 
 
-          {/* MESSAGES */}
+          {/* =================================================
+              MESSAGES
+              ================================================= */}
 
           <div className="kapeel-chat-messages">
 
@@ -1524,21 +1634,23 @@ export default function KapeelChatbot() {
 
                   <div className="kapeel-message">
 
-                    {message.text
-                      .split("\n")
-                      .map(
-                        (
-                          line,
-                          lineIndex
-                        ) => (
-                          <div
-                            key={lineIndex}
-                          >
-                            {line ||
-                              "\u00A0"}
-                          </div>
-                        )
-                      )}
+                    <div className="kapeel-message-text">
+                      {message.text
+                        .split("\n")
+                        .map(
+                          (
+                            line,
+                            lineIndex
+                          ) => (
+                            <div
+                              key={lineIndex}
+                            >
+                              {line ||
+                                "\u00A0"}
+                            </div>
+                          )
+                        )}
+                    </div>
 
                   </div>
 
@@ -1547,7 +1659,9 @@ export default function KapeelChatbot() {
             )}
 
 
-            {/* TYPING INDICATOR */}
+            {/* =================================================
+                TYPING INDICATOR
+                ================================================= */}
 
             {isTyping && (
               <div className="kapeel-message-row bot-message">
@@ -1570,7 +1684,9 @@ export default function KapeelChatbot() {
           </div>
 
 
-          {/* QUICK QUESTIONS */}
+          {/* =================================================
+              QUICK QUESTIONS
+              ================================================= */}
 
           <div className="kapeel-suggestions">
 
@@ -1625,7 +1741,9 @@ export default function KapeelChatbot() {
           </div>
 
 
-          {/* INPUT */}
+          {/* =================================================
+              INPUT
+              ================================================= */}
 
           <div className="kapeel-chat-input">
 
