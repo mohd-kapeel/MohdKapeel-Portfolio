@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./KapeelChatbot.css";
 
 /* =========================================================
-   MOHD KAPEEL - COMPLETE PROFILE
+   MOHD KAPEEL - CURRENT PROFILE
    ========================================================= */
 
 const kapeelInfo = {
@@ -13,13 +13,21 @@ const kapeelInfo = {
   email: "mohdkapeel786@gmail.com",
   phone: "+91-7310746046",
 
-  summary: `
-Mohd Kapeel is a recent B.E. Computer Science graduate with
-hands-on experience in web, AI, and real-time application
-development using React.js, Next.js, Flutter, Firebase, and Supabase.
+  linkedin:
+    "https://www.linkedin.com/in/mohd-kapeel-4b9540288/",
+  github: "https://github.com/mohd-kapeel",
 
-He has a strong foundation in programming, data structures,
-databases, AI development tools, and problem solving.
+  summary: `
+Mohd Kapeel is a recent B.E. Computer Science & Engineering
+graduate and Frontend Developer with hands-on experience in
+modern web development and AI-powered application development.
+
+He specializes in React.js, Next.js, JavaScript, TypeScript,
+responsive UI development, REST APIs, databases and modern
+AI-assisted development tools.
+
+He enjoys building practical, responsive and user-friendly
+applications.
 `,
 
   education: {
@@ -55,54 +63,67 @@ Percentage: 68.8%
   },
 
   skills: {
-    programming: ["C", "C++", "Java"],
+    programming: [
+      "C",
+      "C++",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+    ],
 
-    web: ["HTML", "CSS", "JavaScript"],
+    frontend: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Vite",
+    ],
 
-    frameworks: ["React.js", "Next.js", "Flutter"],
+    backend: [
+      "Node.js",
+      "REST APIs",
+      "FastAPI",
+    ],
 
-    ai: ["OpenAI Codex", "Cursor AI", "Replit AI"],
-
-    apisDatabase: [
-      "RESTful APIs",
+    databases: [
       "MySQL",
       "MongoDB",
       "Supabase",
-      "Firebase",
     ],
 
-    core: ["Data Structures", "OOPS", "DBMS"],
+    ai: [
+      "OpenAI Codex",
+      "Cursor AI",
+      "Replit AI",
+      "AI-assisted development",
+    ],
 
-    additional: [
+    core: [
+      "Data Structures",
+      "OOPS",
+      "DBMS",
       "Git",
       "GitHub",
-      "Vite",
-      "Dart",
-      "Tailwind CSS",
+      "Responsive Web Development",
     ],
   },
 
-  experience: {
-    overall: `
-Mohd Kapeel has hands-on experience in web, AI, and real-time
-application development using React.js, Next.js, Flutter,
-Firebase, and Supabase.
+  internship: {
+    company: "Invent Model Technology Solutions",
 
-His experience includes responsive web applications,
-UI development, AI-assisted workflows, authentication,
-role-based access control, RESTful APIs, database management,
-and real-time applications.
-`,
+    role: "Web Development / Software Development Intern",
 
-    internship: `
-Mohd Kapeel completed a 1-month Web Development Internship
-at SoftechBee from June 2025 to July 2025.
+    description: `
+During his internship at Invent Model Technology Solutions,
+Mohd Kapeel worked on practical software and web application
+projects including AI Hire Pro, CRM Suite and HRMS.
 
-During the internship, he worked with HTML, CSS, JavaScript,
-React.js and Next.js.
-
-He gained practical experience in responsive web development,
-UI development, debugging, and real-world development workflows.
+His work included frontend interfaces, responsive layouts,
+application workflows, API integration, database-driven
+features, debugging and improving user experiences.
 `,
   },
 
@@ -113,33 +134,28 @@ UI development, debugging, and real-world development workflows.
       technologies: [
         "React.js",
         "Next.js",
-        "AI Tools",
-        "Supabase",
-        "REST APIs",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "AI",
       ],
 
-      shortDescription: `
+      description: `
 AI Hire Pro is an AI-powered recruitment platform designed
-to streamline candidate sourcing, screening, evaluation,
-and hiring workflows.
+to streamline candidate sourcing, screening, evaluation and
+hiring workflows.
 `,
 
       explanation: `
-AI Hire Pro is an AI-powered recruitment platform developed
-to streamline the recruitment process.
+The platform helps recruiters manage candidates and
+recruitment activities through a modern web interface.
 
-The platform helps with candidate sourcing, screening,
-evaluation, and hiring workflows.
+It includes recruiter dashboards, candidate management,
+job requirement management, candidate screening and
+AI-assisted candidate analysis.
 
-Responsive recruiter dashboards were built using React.js
-and Next.js for managing candidates, job requirements,
-and recruitment activities.
-
-AI-assisted workflows were integrated to support candidate
-analysis and improve recruitment decision-making.
-
-Authentication and role-based access controls were implemented
-using Supabase for secure user and application data management.
+The goal is to reduce manual recruitment work and make
+the hiring workflow more efficient.
 `,
 
       features: [
@@ -150,53 +166,83 @@ using Supabase for secure user and application data management.
         "Recruiter dashboards",
         "Job requirement management",
         "Candidate analysis",
-        "Authentication",
-        "Role-based access control",
-        "Application data management",
         "Responsive UI",
         "REST API integration",
       ],
     },
 
-    bolyaar: {
-      name: "BolYaar",
+    crmSuite: {
+      name: "CRM Suite",
 
       technologies: [
-        "Flutter",
-        "Dart",
-        "Firebase",
-        "Platform Security",
+        "React.js",
+        "TypeScript",
+        "Vite",
+        "Supabase",
       ],
 
-      shortDescription: `
-BolYaar is a real-time social platform with closed-loop
-campus verification controls designed to regulate network access.
+      description: `
+CRM Suite is a modern web-based Customer Relationship
+Management platform for managing leads, contacts, sales
+pipelines, customer activities and team collaboration.
 `,
 
       explanation: `
-BolYaar is a real-time social platform developed using
-Flutter, Dart, and Firebase.
+The platform provides a centralized workspace for managing
+customer and sales-related activities.
 
-The platform uses closed-loop campus verification controls
-to regulate network access.
+It includes lead management, contact management, sales
+pipeline management, customer activities and team
+collaboration.
 
-Firebase database rule-sets were configured to manage
-anonymous user posts and polls securely.
-
-Traffic metrics and system connection logs were audited
-to detect and mitigate malicious patterns.
+The application uses a responsive modern interface built
+with React.js and TypeScript.
 `,
 
       features: [
-        "Real-time social platform",
-        "Campus verification",
-        "Network access control",
-        "Anonymous posts",
-        "Anonymous polls",
-        "Firebase security rules",
-        "Traffic monitoring",
-        "Connection log analysis",
-        "Platform security",
+        "Lead management",
+        "Contact management",
+        "Sales pipeline",
+        "Customer activities",
+        "Team collaboration",
+        "Responsive dashboard",
+        "Customer management",
+      ],
+    },
+
+    hrms: {
+      name: "HRMS",
+
+      technologies: [
+        "React.js",
+        "Next.js",
+        "JavaScript",
+        "REST APIs",
+        "Database",
+      ],
+
+      description: `
+HRMS is a Human Resource Management System designed to
+support employee and HR-related business processes.
+`,
+
+      explanation: `
+The HRMS project focuses on digitizing and simplifying
+common HR workflows through a centralized web application.
+
+The system provides interfaces for managing employee and
+HR-related information and workflows.
+
+The application focuses on responsive UI, structured data
+management and practical business functionality.
+`,
+
+      features: [
+        "Employee management",
+        "HR workflow management",
+        "Responsive interface",
+        "Data management",
+        "Dashboard workflows",
       ],
     },
 
@@ -204,22 +250,22 @@ to detect and mitigate malicious patterns.
       name: "SLIET Mentorship Platform",
 
       technologies: [
-        "Web Technologies",
         "JavaScript",
         "Frontend Development",
+        "Responsive UI",
       ],
 
-      shortDescription: `
-A web-based mentorship platform designed to connect students
-and mentors.
+      description: `
+A web-based mentorship platform designed to connect
+students and mentors.
 `,
 
       explanation: `
-The SLIET Mentorship Platform is a web-based platform designed
-to connect students and mentors.
+The platform provides an interface where students can
+interact with mentorship resources and connect with mentors.
 
-The project focuses on providing an interface where students
-can interact with mentorship resources and connect with mentors.
+The project focuses on responsive frontend development
+and user-friendly interaction.
 `,
     },
 
@@ -233,45 +279,29 @@ can interact with mentorship resources and connect with mentors.
         "YOLOv8",
       ],
 
-      shortDescription: `
-An AI-based examination monitoring system involving face detection,
-blink detection, phone detection, head pose, and gaze analysis.
+      description: `
+An AI-based examination monitoring system involving
+face detection, blink detection, phone detection,
+head pose and gaze analysis.
 `,
 
       explanation: `
-The AI-Based Online Exam Proctoring project focuses on
-monitoring online examinations using AI and computer vision.
+The project focuses on monitoring online examinations
+using AI and computer vision techniques.
 
 The system involves face detection, blink detection,
-phone detection, head pose analysis, and gaze direction analysis.
-
-The goal is to help monitor examination behavior through
-automated visual analysis.
+phone detection, head pose analysis and gaze direction
+analysis.
 `,
-    },
 
-    mindtrain: {
-      name: "MindTrain",
-
-      technologies: [
-        "Flutter",
-        "Dart",
-        "Local Storage",
-        "Background Alarm Functionality",
+      features: [
+        "Face detection",
+        "Blink detection",
+        "Phone detection",
+        "Head pose analysis",
+        "Gaze analysis",
+        "Computer vision",
       ],
-
-      shortDescription: `
-A Flutter-based alarm and profile management application
-with local storage and background alarm functionality.
-`,
-
-      explanation: `
-MindTrain is a Flutter-based application focused on alarm
-and profile management.
-
-The application uses local storage and supports
-background alarm functionality.
-`,
     },
 
     portfolio: {
@@ -284,18 +314,15 @@ background alarm functionality.
         "CSS",
       ],
 
-      shortDescription: `
-A modern responsive personal portfolio built using React,
-Vite, and modern CSS.
+      description: `
+A modern responsive personal portfolio built using
+React.js, Vite and modern CSS.
 `,
 
       explanation: `
-The portfolio website is a responsive personal developer
-portfolio built using React, Vite, JavaScript, and modern CSS.
-
-It presents Mohd Kapeel's skills, education, projects,
-experience, achievements, and contact information through
-an interactive developer-focused interface.
+The portfolio presents Mohd Kapeel's skills, education,
+projects, experience, achievements and contact information
+through an interactive developer-focused interface.
 `,
     },
   },
@@ -314,16 +341,21 @@ an interactive developer-focused interface.
   ],
 
   career: `
-Mohd Kapeel is interested in Frontend Development and Software
-Development opportunities, especially roles involving React.js,
-Next.js, JavaScript, modern web technologies, AI-assisted development,
-and application development.
+Mohd Kapeel is interested in Frontend Development,
+Full-Stack Development and Software Development opportunities.
+
+He is particularly interested in roles involving React.js,
+Next.js, JavaScript, TypeScript, modern web technologies,
+AI-assisted development, responsive UI development and
+application development.
+
+He is open to suitable internship and full-time opportunities.
 `,
 };
 
 
 /* =========================================================
-   HELPER FUNCTIONS
+   HELPERS
    ========================================================= */
 
 const normalize = (text = "") =>
@@ -340,11 +372,10 @@ const hasAny = (text, words) =>
 const formatList = (items) =>
   items.map((item) => `• ${item}`).join("\n");
 
-const projectResponse = (project) => {
-  return `
+const projectResponse = (project) => `
 ${project.name}
 
-${project.shortDescription.trim()}
+${project.description.trim()}
 
 Technologies:
 ${formatList(project.technologies)}
@@ -352,13 +383,16 @@ ${formatList(project.technologies)}
 Explanation:
 ${project.explanation.trim()}
 
-${project.features ? `Key Features:\n${formatList(project.features)}` : ""}
+${
+  project.features
+    ? `Key Features:\n${formatList(project.features)}`
+    : ""
+}
 `.trim();
-};
 
 
 /* =========================================================
-   CHATBOT RESPONSE ENGINE
+   RESPONSE ENGINE
    ========================================================= */
 
 function getBotResponse(question) {
@@ -368,9 +402,8 @@ function getBotResponse(question) {
     return "Please ask me something about Mohd Kapeel.";
   }
 
-  /* -------------------------------------------------------
-     GREETINGS
-  ------------------------------------------------------- */
+
+  /* GREETING */
 
   if (
     q === "hi" ||
@@ -386,29 +419,32 @@ Hello! 👋 I'm Kapeel AI.
 I can answer questions about Mohd Kapeel, including:
 
 • Profile
-• Skills and technologies
+• Technical Skills
 • Education
-• Experience
 • Internship
-• Projects
-• Project explanations
+• Experience
+• AI Hire Pro
+• CRM Suite
+• HRMS
+• Other Projects
 • Achievements
 • Career
-• Contact information
+• Contact Information
 
-You can ask me naturally, for example:
+Try asking:
+
+"Tell me about Mohd Kapeel"
+
+"What are his skills?"
 
 "Explain AI Hire Pro"
 
-"What did Kapeel do in BolYaar?"
-
-"What technologies does he know?"
+"Tell me about CRM Suite"
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     THANKS
-  ------------------------------------------------------- */
+
+  /* THANK YOU */
 
   if (
     q.includes("thank you") ||
@@ -422,9 +458,8 @@ Feel free to ask me anything about Mohd Kapeel.
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     ABOUT / PROFILE
-  ------------------------------------------------------- */
+
+  /* ABOUT */
 
   if (
     hasAny(q, [
@@ -444,25 +479,25 @@ Feel free to ask me anything about Mohd Kapeel.
     ])
   ) {
     return `
-${kapeelInfo.name} is a ${kapeelInfo.role} and recent B.E.
-Computer Science graduate from Sant Longowal Institute of
-Engineering & Technology (SLIET).
+${kapeelInfo.name} is a ${kapeelInfo.role} and recent
+B.E. Computer Science & Engineering graduate from
+Sant Longowal Institute of Engineering & Technology (SLIET).
 
-He has hands-on experience in web, AI, and real-time application
-development using React.js, Next.js, Flutter, Firebase, and Supabase.
+He specializes in React.js, Next.js, JavaScript, TypeScript,
+responsive web development, REST APIs and modern frontend
+development.
 
-His technical background includes programming languages,
-frontend technologies, AI development tools, RESTful APIs,
-databases, data structures, OOPS, and DBMS.
+He has hands-on experience building AI-powered and
+business-focused applications including AI Hire Pro,
+CRM Suite and HRMS.
 
-His major projects include AI Hire Pro and BolYaar,
-along with academic and personal projects.
+He is interested in Frontend Development, Full-Stack
+Development and Software Development opportunities.
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     SUMMARY
-  ------------------------------------------------------- */
+
+  /* SUMMARY */
 
   if (
     hasAny(q, [
@@ -477,9 +512,8 @@ along with academic and personal projects.
     return kapeelInfo.summary.trim();
   }
 
-  /* -------------------------------------------------------
-     SKILLS
-  ------------------------------------------------------- */
+
+  /* SKILLS */
 
   if (
     hasAny(q, [
@@ -499,52 +533,28 @@ along with academic and personal projects.
     return `
 Mohd Kapeel's technical skills include:
 
-Programming Languages:
+Programming:
 ${formatList(kapeelInfo.skills.programming)}
 
-Web Technologies:
-${formatList(kapeelInfo.skills.web)}
+Frontend:
+${formatList(kapeelInfo.skills.frontend)}
 
-Frameworks:
-${formatList(kapeelInfo.skills.frameworks)}
+Backend & APIs:
+${formatList(kapeelInfo.skills.backend)}
 
-AI Development Tools:
+Databases:
+${formatList(kapeelInfo.skills.databases)}
+
+AI Development:
 ${formatList(kapeelInfo.skills.ai)}
 
-APIs & Databases:
-${formatList(kapeelInfo.skills.apisDatabase)}
-
-Core Concepts:
+Core Skills:
 ${formatList(kapeelInfo.skills.core)}
-
-Additional:
-${formatList(kapeelInfo.skills.additional)}
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     PROGRAMMING
-  ------------------------------------------------------- */
 
-  if (
-    hasAny(q, [
-      "programming language",
-      "programming languages",
-      "coding language",
-      "coding languages",
-      "what languages",
-    ])
-  ) {
-    return `
-Mohd Kapeel's programming languages are:
-
-${formatList(kapeelInfo.skills.programming)}
-`.trim();
-  }
-
-  /* -------------------------------------------------------
-     FRONTEND
-  ------------------------------------------------------- */
+  /* FRONTEND */
 
   if (
     hasAny(q, [
@@ -553,26 +563,22 @@ ${formatList(kapeelInfo.skills.programming)}
       "frontend skills",
       "web development",
       "web technologies",
-      "frontend technologies",
     ])
   ) {
     return `
-Mohd Kapeel focuses on frontend and web development.
+Mohd Kapeel focuses on frontend and modern web development.
 
-Web Technologies:
-${formatList(kapeelInfo.skills.web)}
+Frontend technologies:
 
-Frameworks:
-${formatList(kapeelInfo.skills.frameworks)}
+${formatList(kapeelInfo.skills.frontend)}
 
-He has hands-on experience building responsive web applications
-and recruiter dashboards using React.js and Next.js.
+He uses React.js and Next.js to build responsive,
+component-based and user-friendly web applications.
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     REACT
-  ------------------------------------------------------- */
+
+  /* REACT */
 
   if (
     hasAny(q, [
@@ -582,18 +588,19 @@ and recruiter dashboards using React.js and Next.js.
     ])
   ) {
     return `
-Yes. React.js is one of Mohd Kapeel's main frontend technologies.
+Yes. React.js is one of Mohd Kapeel's primary frontend
+technologies.
 
-He has used React.js to build responsive web applications,
-including recruiter dashboards for AI Hire Pro.
+He uses React.js to build responsive interfaces,
+reusable components, dashboards and web applications.
 
-React.js is one of his core frontend development technologies.
+AI Hire Pro and CRM Suite are examples of projects
+using React-based development.
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     NEXT.JS
-  ------------------------------------------------------- */
+
+  /* NEXT.JS */
 
   if (
     hasAny(q, [
@@ -605,41 +612,42 @@ React.js is one of his core frontend development technologies.
     return `
 Next.js is one of Mohd Kapeel's main frontend frameworks.
 
-He used Next.js in AI Hire Pro to build responsive recruiter
-dashboards for managing candidates, job requirements,
-and recruitment activities.
+He uses Next.js for modern web application development,
+responsive interfaces and application workflows.
+
+AI Hire Pro and CRM Suite are examples of projects
+using modern frontend frameworks.
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     FLUTTER
-  ------------------------------------------------------- */
+
+  /* JAVASCRIPT / TYPESCRIPT */
 
   if (
     hasAny(q, [
-      "flutter",
-      "dart",
+      "javascript",
+      "typescript",
+      "js",
+      "ts",
     ])
   ) {
     return `
-Mohd Kapeel has experience with Flutter and Dart.
+Mohd Kapeel works with JavaScript and TypeScript as part
+of his modern frontend development stack.
 
-He used Flutter and Dart in projects such as BolYaar and MindTrain.
-
-Flutter is part of his application development experience
-alongside React.js and Next.js.
+He uses them with React.js and Next.js to build
+interactive and maintainable web applications.
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     AI TOOLS
-  ------------------------------------------------------- */
+
+  /* AI */
 
   if (
     hasAny(q, [
+      "ai",
+      "artificial intelligence",
       "ai tools",
-      "ai tool",
-      "artificial intelligence tools",
       "openai",
       "codex",
       "cursor",
@@ -647,18 +655,20 @@ alongside React.js and Next.js.
     ])
   ) {
     return `
-Mohd Kapeel's AI development tools include:
+Mohd Kapeel has experience with AI-assisted application
+development and modern AI development tools.
+
+AI tools include:
 
 ${formatList(kapeelInfo.skills.ai)}
 
-He has also worked with AI-assisted workflows through
-the AI Hire Pro recruitment platform.
+He also worked on AI-powered application development,
+including the AI Hire Pro recruitment platform.
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     DATABASES
-  ------------------------------------------------------- */
+
+  /* DATABASE / API */
 
   if (
     hasAny(q, [
@@ -668,22 +678,28 @@ the AI Hire Pro recruitment platform.
       "mongodb",
       "mongo",
       "supabase",
-      "firebase",
+      "api",
+      "apis",
+      "rest api",
+      "rest apis",
     ])
   ) {
     return `
 Mohd Kapeel has experience with:
 
-${formatList(kapeelInfo.skills.apisDatabase)}
+Databases:
+${formatList(kapeelInfo.skills.databases)}
 
-These technologies support his application development,
-data management, authentication, and real-time application work.
+Backend & APIs:
+${formatList(kapeelInfo.skills.backend)}
+
+These technologies support his web applications,
+data management and API-driven workflows.
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     EDUCATION
-  ------------------------------------------------------- */
+
+  /* EDUCATION */
 
   if (
     hasAny(q, [
@@ -710,9 +726,8 @@ ${kapeelInfo.education.school.trim()}
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     B.E. / SLIET
-  ------------------------------------------------------- */
+
+  /* B.E. / SLIET */
 
   if (
     hasAny(q, [
@@ -730,9 +745,8 @@ ${kapeelInfo.education.school.trim()}
     return kapeelInfo.education.degree.trim();
   }
 
-  /* -------------------------------------------------------
-     DIPLOMA
-  ------------------------------------------------------- */
+
+  /* DIPLOMA */
 
   if (
     hasAny(q, [
@@ -745,26 +759,8 @@ ${kapeelInfo.education.school.trim()}
     return kapeelInfo.education.diploma.trim();
   }
 
-  /* -------------------------------------------------------
-     CLASS XII
-  ------------------------------------------------------- */
 
-  if (
-    hasAny(q, [
-      "12th",
-      "class 12",
-      "senior secondary",
-      "school",
-      "68.8",
-      "shri krishna",
-    ])
-  ) {
-    return kapeelInfo.education.school.trim();
-  }
-
-  /* -------------------------------------------------------
-     EXPERIENCE
-  ------------------------------------------------------- */
+  /* EXPERIENCE */
 
   if (
     hasAny(q, [
@@ -775,27 +771,44 @@ ${kapeelInfo.education.school.trim()}
       "work history",
     ])
   ) {
-    return kapeelInfo.experience.overall.trim();
+    return `
+Mohd Kapeel has hands-on experience in modern web
+development and AI-powered application development.
+
+His practical work includes frontend development,
+responsive UI development, API integration,
+database-driven applications, debugging and
+application workflows.
+
+He has worked on AI Hire Pro, CRM Suite and HRMS
+during his internship experience.
+`.trim();
   }
 
-  /* -------------------------------------------------------
-     INTERNSHIP
-  ------------------------------------------------------- */
+
+  /* INTERNSHIP */
 
   if (
     hasAny(q, [
       "internship",
       "intern",
-      "softechbee",
-      "softech bee",
+      "invent model",
+      "inventmodel",
     ])
   ) {
-    return kapeelInfo.experience.internship.trim();
+    return `
+Internship:
+${kapeelInfo.internship.company}
+
+Role:
+${kapeelInfo.internship.role}
+
+${kapeelInfo.internship.description.trim()}
+`.trim();
   }
 
-  /* -------------------------------------------------------
-     PROJECT LIST
-  ------------------------------------------------------- */
+
+  /* PROJECT LIST */
 
   if (
     hasAny(q, [
@@ -813,26 +826,25 @@ Mohd Kapeel has worked on several projects:
 1. AI Hire Pro
    AI-powered recruitment platform.
 
-2. BolYaar
-   Real-time campus social platform.
+2. CRM Suite
+   Customer Relationship Management platform.
 
-3. SLIET Mentorship Platform
-   Web-based platform connecting students and mentors.
+3. HRMS
+   Human Resource Management System.
 
-4. AI-Based Online Exam Proctoring
-   AI-based examination monitoring system.
+4. SLIET Mentorship Platform
+   Web-based mentorship platform.
 
-5. MindTrain
-   Flutter-based alarm and profile management application.
+5. AI-Based Online Exam Proctoring
+   AI and computer vision examination monitoring system.
 
 6. Portfolio Website
    Responsive personal developer portfolio.
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     AI HIRE PRO
-  ------------------------------------------------------- */
+
+  /* AI HIRE PRO */
 
   if (
     hasAny(q, [
@@ -844,30 +856,48 @@ Mohd Kapeel has worked on several projects:
       "hiring platform",
       "recruiter dashboard",
       "candidate platform",
+      "candidate screening",
     ])
   ) {
     return projectResponse(kapeelInfo.projects.aiHirePro);
   }
 
-  /* -------------------------------------------------------
-     BOLYAAR
-  ------------------------------------------------------- */
+
+  /* CRM SUITE */
 
   if (
     hasAny(q, [
-      "bolyaar",
-      "bol yaar",
-      "social platform",
-      "campus social",
-      "campus platform",
+      "crm",
+      "crm suite",
+      "customer relationship",
+      "customer relationship management",
+      "crm project",
+      "sales pipeline",
+      "lead management",
+      "customer management",
     ])
   ) {
-    return projectResponse(kapeelInfo.projects.bolyaar);
+    return projectResponse(kapeelInfo.projects.crmSuite);
   }
 
-  /* -------------------------------------------------------
-     MENTORSHIP
-  ------------------------------------------------------- */
+
+  /* HRMS */
+
+  if (
+    hasAny(q, [
+      "hrms",
+      "human resource",
+      "human resources",
+      "hr management",
+      "hr project",
+      "employee management",
+    ])
+  ) {
+    return projectResponse(kapeelInfo.projects.hrms);
+  }
+
+
+  /* MENTORSHIP */
 
   if (
     hasAny(q, [
@@ -880,9 +910,8 @@ Mohd Kapeel has worked on several projects:
     return projectResponse(kapeelInfo.projects.mentorship);
   }
 
-  /* -------------------------------------------------------
-     PROCTORING
-  ------------------------------------------------------- */
+
+  /* PROCTORING */
 
   if (
     hasAny(q, [
@@ -901,24 +930,8 @@ Mohd Kapeel has worked on several projects:
     return projectResponse(kapeelInfo.projects.proctoring);
   }
 
-  /* -------------------------------------------------------
-     MINDTRAIN
-  ------------------------------------------------------- */
 
-  if (
-    hasAny(q, [
-      "mindtrain",
-      "mind train",
-      "alarm application",
-      "alarm project",
-    ])
-  ) {
-    return projectResponse(kapeelInfo.projects.mindtrain);
-  }
-
-  /* -------------------------------------------------------
-     PORTFOLIO
-  ------------------------------------------------------- */
+  /* PORTFOLIO */
 
   if (
     hasAny(q, [
@@ -931,48 +944,8 @@ Mohd Kapeel has worked on several projects:
     return projectResponse(kapeelInfo.projects.portfolio);
   }
 
-  /* -------------------------------------------------------
-     PROJECT EXPLANATION
-  ------------------------------------------------------- */
 
-  if (
-    hasAny(q, [
-      "explain the project",
-      "explain project",
-      "project explanation",
-      "how does the project work",
-      "how was the project built",
-      "what did he do in the project",
-      "what was his role in the project",
-      "project details",
-      "tell me more about the project",
-    ])
-  ) {
-    return `
-I can explain Mohd Kapeel's projects in detail.
-
-You can ask me about:
-
-• AI Hire Pro
-• BolYaar
-• SLIET Mentorship Platform
-• AI-Based Online Exam Proctoring
-• MindTrain
-• Portfolio Website
-
-For example:
-
-"Explain AI Hire Pro"
-
-"What did Kapeel do in BolYaar?"
-
-"What technologies were used in AI Hire Pro?"
-`.trim();
-  }
-
-  /* -------------------------------------------------------
-     ACHIEVEMENTS
-  ------------------------------------------------------- */
+  /* ACHIEVEMENTS */
 
   if (
     hasAny(q, [
@@ -993,9 +966,8 @@ ${formatList(kapeelInfo.achievements)}
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     POSITIONS
-  ------------------------------------------------------- */
+
+  /* POSITIONS */
 
   if (
     hasAny(q, [
@@ -1017,9 +989,8 @@ ${formatList(kapeelInfo.positions)}
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     CAREER
-  ------------------------------------------------------- */
+
+  /* CAREER */
 
   if (
     hasAny(q, [
@@ -1041,9 +1012,8 @@ ${formatList(kapeelInfo.positions)}
     return kapeelInfo.career.trim();
   }
 
-  /* -------------------------------------------------------
-     CONTACT
-  ------------------------------------------------------- */
+
+  /* CONTACT */
 
   if (
     hasAny(q, [
@@ -1064,14 +1034,16 @@ ${kapeelInfo.email}
 Phone:
 ${kapeelInfo.phone}
 
-You can also use the LinkedIn, GitHub,
-and Portfolio links available on the website.
+LinkedIn:
+${kapeelInfo.linkedin}
+
+GitHub:
+${kapeelInfo.github}
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     EMAIL
-  ------------------------------------------------------- */
+
+  /* EMAIL */
 
   if (
     hasAny(q, [
@@ -1088,9 +1060,8 @@ ${kapeelInfo.email}
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     PHONE
-  ------------------------------------------------------- */
+
+  /* PHONE */
 
   if (
     hasAny(q, [
@@ -1107,9 +1078,8 @@ ${kapeelInfo.phone}
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     GITHUB
-  ------------------------------------------------------- */
+
+  /* GITHUB */
 
   if (
     hasAny(q, [
@@ -1123,15 +1093,14 @@ ${kapeelInfo.phone}
     ])
   ) {
     return `
-You can find Mohd Kapeel's projects and source code
-through the GitHub link available in the portfolio's
-social links.
+Mohd Kapeel's GitHub profile:
+
+${kapeelInfo.github}
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     LINKEDIN
-  ------------------------------------------------------- */
+
+  /* LINKEDIN */
 
   if (
     hasAny(q, [
@@ -1140,14 +1109,14 @@ social links.
     ])
   ) {
     return `
-You can find Mohd Kapeel's LinkedIn profile through
-the LinkedIn link available in the portfolio's social links.
+Mohd Kapeel's LinkedIn profile:
+
+${kapeelInfo.linkedin}
 `.trim();
   }
 
-  /* -------------------------------------------------------
-     LOCATION
-  ------------------------------------------------------- */
+
+  /* LOCATION */
 
   if (
     hasAny(q, [
@@ -1160,42 +1129,43 @@ the LinkedIn link available in the portfolio's social links.
     return `Mohd Kapeel is based in ${kapeelInfo.location}.`;
   }
 
-  /* -------------------------------------------------------
-     FALLBACK
-  ------------------------------------------------------- */
+
+  /* FALLBACK */
 
   return `
 I'm Kapeel AI 🤖.
 
-I can answer questions about Mohd Kapeel, including:
+I can answer questions about:
 
-• About / profile
-• Skills & technologies
+• Mohd Kapeel's Profile
+• Technical Skills
 • React.js / Next.js
-• Flutter
-• AI development tools
+• JavaScript / TypeScript
+• AI Development
 • Education
-• Experience & internship
+• Internship
+• Experience
 • AI Hire Pro
-• BolYaar
+• CRM Suite
+• HRMS
 • SLIET Mentorship Platform
 • AI Exam Proctoring
-• MindTrain
 • Portfolio Website
 • Achievements
-• Positions of responsibility
-• Career interests
-• Contact information
+• Career Interests
+• Contact Information
 
 Try asking:
 
+"Tell me about Mohd Kapeel"
+
+"What are his technical skills?"
+
 "Explain AI Hire Pro"
 
-"What technologies does Kapeel know?"
+"Tell me about CRM Suite"
 
-"What did he do in BolYaar?"
-
-"Tell me about his education"
+"Tell me about his internship"
 `.trim();
 }
 
@@ -1210,42 +1180,48 @@ export default function KapeelChatbot() {
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "Hi! 👋 I'm Kapeel AI. Ask me anything about Mohd Kapeel.",
+      text:
+        "Hi! 👋 I'm Kapeel AI. Ask me anything about Mohd Kapeel, his skills, projects, education or experience.",
     },
   ]);
 
   const [input, setInput] = useState("");
-
   const [isTyping, setIsTyping] = useState(false);
 
   const messagesEndRef = useRef(null);
-
   const typingTimerRef = useRef(null);
+  const responseTimeoutRef = useRef(null);
+
 
   /* =======================================================
      SOUND
-  ======================================================= */
+     ======================================================= */
 
   const playSound = (type) => {
     try {
       const AudioContext =
-        window.AudioContext || window.webkitAudioContext;
+        window.AudioContext ||
+        window.webkitAudioContext;
 
       if (!AudioContext) return;
 
       const audioContext = new AudioContext();
 
-      const oscillator = audioContext.createOscillator();
+      const oscillator =
+        audioContext.createOscillator();
 
-      const gainNode = audioContext.createGain();
+      const gainNode =
+        audioContext.createGain();
 
       oscillator.connect(gainNode);
-
       gainNode.connect(audioContext.destination);
 
       const now = audioContext.currentTime;
 
       if (type === "user") {
+        /* User send sound */
+        oscillator.type = "sine";
+
         oscillator.frequency.setValueAtTime(
           520,
           now
@@ -1255,7 +1231,28 @@ export default function KapeelChatbot() {
           700,
           now + 0.08
         );
+
+        gainNode.gain.setValueAtTime(
+          0.001,
+          now
+        );
+
+        gainNode.gain.exponentialRampToValueAtTime(
+          0.055,
+          now + 0.01
+        );
+
+        gainNode.gain.exponentialRampToValueAtTime(
+          0.001,
+          now + 0.12
+        );
+
+        oscillator.start(now);
+        oscillator.stop(now + 0.12);
       } else {
+        /* AI response sound */
+        oscillator.type = "sine";
+
         oscillator.frequency.setValueAtTime(
           620,
           now
@@ -1265,42 +1262,42 @@ export default function KapeelChatbot() {
           850,
           now + 0.12
         );
+
+        gainNode.gain.setValueAtTime(
+          0.001,
+          now
+        );
+
+        gainNode.gain.exponentialRampToValueAtTime(
+          0.045,
+          now + 0.015
+        );
+
+        gainNode.gain.exponentialRampToValueAtTime(
+          0.001,
+          now + 0.18
+        );
+
+        oscillator.start(now);
+        oscillator.stop(now + 0.18);
       }
-
-      gainNode.gain.setValueAtTime(
-        0.001,
-        now
-      );
-
-      gainNode.gain.exponentialRampToValueAtTime(
-        0.06,
-        now + 0.01
-      );
-
-      gainNode.gain.exponentialRampToValueAtTime(
-        0.001,
-        now + 0.15
-      );
-
-      oscillator.start(now);
-
-      oscillator.stop(now + 0.15);
 
       oscillator.addEventListener(
         "ended",
         () => {
           audioContext.close();
-        }
+        },
+        { once: true }
       );
     } catch {
-      // Sound is optional.
+      /* Sound is optional */
     }
   };
 
 
   /* =======================================================
      AUTO SCROLL
-  ======================================================= */
+     ======================================================= */
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({
@@ -1311,12 +1308,16 @@ export default function KapeelChatbot() {
 
   /* =======================================================
      CLEANUP
-  ======================================================= */
+     ======================================================= */
 
   useEffect(() => {
     return () => {
       if (typingTimerRef.current) {
         clearInterval(typingTimerRef.current);
+      }
+
+      if (responseTimeoutRef.current) {
+        clearTimeout(responseTimeoutRef.current);
       }
     };
   }, []);
@@ -1324,17 +1325,18 @@ export default function KapeelChatbot() {
 
   /* =======================================================
      SEND MESSAGE
-  ======================================================= */
+     ======================================================= */
 
   const sendMessage = (customMessage = "") => {
-    const question = (
-      customMessage || input
-    ).trim();
+    const question =
+      (customMessage || input).trim();
 
     if (!question || isTyping) return;
 
-    const botAnswer = getBotResponse(question);
+    const botAnswer =
+      getBotResponse(question);
 
+    /* 🔊 USER SEND SOUND */
     playSound("user");
 
     setMessages((previous) => [
@@ -1346,81 +1348,73 @@ export default function KapeelChatbot() {
     ]);
 
     setInput("");
-
     setIsTyping(true);
 
-    /*
-     * Small delay before AI starts typing.
-     */
-    setTimeout(() => {
-      playSound("bot");
 
-      /*
-       * Add empty bot message first.
-       */
-      setMessages((previous) => [
-        ...previous,
-        {
-          sender: "bot",
-          text: "",
-        },
-      ]);
+    /* Small response delay */
 
-      let characterIndex = 0;
+    responseTimeoutRef.current =
+      setTimeout(() => {
 
-      let currentText = "";
+        /* 🔊 AI RESPONSE SOUND */
+        playSound("bot");
 
-      /*
-       * Typing speed.
-       *
-       * Lower = faster
-       * Higher = slower
-       */
-      const typingSpeed = 12;
+        setMessages((previous) => [
+          ...previous,
+          {
+            sender: "bot",
+            text: "",
+          },
+        ]);
 
-      typingTimerRef.current = setInterval(() => {
-        currentText += botAnswer.charAt(
-          characterIndex
-        );
+        let characterIndex = 0;
+        let currentText = "";
 
-        characterIndex += 1;
+        const typingSpeed = 8;
 
-        setMessages((previous) => {
-          const updated = [...previous];
+        typingTimerRef.current =
+          setInterval(() => {
 
-          if (updated.length > 0) {
-            updated[updated.length - 1] = {
-              sender: "bot",
-              text: currentText,
-            };
-          }
+            currentText +=
+              botAnswer.charAt(
+                characterIndex
+              );
 
-          return updated;
-        });
+            characterIndex += 1;
 
-        /*
-         * Finish typing
-         */
-        if (
-          characterIndex >=
-          botAnswer.length
-        ) {
-          clearInterval(
-            typingTimerRef.current
-          );
+            setMessages((previous) => {
+              const updated = [...previous];
 
-          typingTimerRef.current = null;
+              if (updated.length > 0) {
+                updated[updated.length - 1] = {
+                  sender: "bot",
+                  text: currentText,
+                };
+              }
 
-          setIsTyping(false);
-        }
-      }, typingSpeed);
-    }, 350);
+              return updated;
+            });
+
+            if (
+              characterIndex >=
+              botAnswer.length
+            ) {
+              clearInterval(
+                typingTimerRef.current
+              );
+
+              typingTimerRef.current = null;
+
+              setIsTyping(false);
+            }
+          }, typingSpeed);
+      }, 250);
   };
 
 
   /* =======================================================
      KEYBOARD
-  ======================================================= */
+     ======================================================= */
 
   const handleKeyDown = (event) => {
     if (
@@ -1428,15 +1422,14 @@ export default function KapeelChatbot() {
       !event.shiftKey
     ) {
       event.preventDefault();
-
       sendMessage();
     }
   };
 
 
   /* =======================================================
-     QUICK QUESTION
-  ======================================================= */
+     QUICK QUESTIONS
+     ======================================================= */
 
   const askQuickQuestion = (question) => {
     if (isTyping) return;
@@ -1447,16 +1440,14 @@ export default function KapeelChatbot() {
 
   /* =======================================================
      UI
-  ======================================================= */
+     ======================================================= */
 
   return (
     <>
       {!open && (
         <button
           className="kapeel-chat-button"
-          onClick={() =>
-            setOpen(true)
-          }
+          onClick={() => setOpen(true)}
           aria-label="Open Kapeel AI chatbot"
           type="button"
         >
@@ -1472,12 +1463,11 @@ export default function KapeelChatbot() {
         </button>
       )}
 
+
       {open && (
         <div className="kapeel-chat-window">
 
-          {/* =================================================
-              HEADER
-          ================================================= */}
+          {/* HEADER */}
 
           <div className="kapeel-chat-header">
 
@@ -1501,9 +1491,7 @@ export default function KapeelChatbot() {
 
             <button
               className="kapeel-close"
-              onClick={() =>
-                setOpen(false)
-              }
+              onClick={() => setOpen(false)}
               aria-label="Close chatbot"
               type="button"
             >
@@ -1513,9 +1501,7 @@ export default function KapeelChatbot() {
           </div>
 
 
-          {/* =================================================
-              MESSAGES
-          ================================================= */}
+          {/* MESSAGES */}
 
           <div className="kapeel-chat-messages">
 
@@ -1546,9 +1532,7 @@ export default function KapeelChatbot() {
                           lineIndex
                         ) => (
                           <div
-                            key={
-                              lineIndex
-                            }
+                            key={lineIndex}
                           >
                             {line ||
                               "\u00A0"}
@@ -1563,7 +1547,7 @@ export default function KapeelChatbot() {
             )}
 
 
-            {/* Typing indicator */}
+            {/* TYPING INDICATOR */}
 
             {isTyping && (
               <div className="kapeel-message-row bot-message">
@@ -1573,27 +1557,20 @@ export default function KapeelChatbot() {
                 </div>
 
                 <div className="kapeel-message kapeel-typing">
-
                   <span></span>
                   <span></span>
                   <span></span>
-
                 </div>
 
               </div>
             )}
 
-
-            <div
-              ref={messagesEndRef}
-            />
+            <div ref={messagesEndRef} />
 
           </div>
 
 
-          {/* =================================================
-              QUICK QUESTIONS
-          ================================================= */}
+          {/* QUICK QUESTIONS */}
 
           <div className="kapeel-suggestions">
 
@@ -1602,7 +1579,7 @@ export default function KapeelChatbot() {
               disabled={isTyping}
               onClick={() =>
                 askQuickQuestion(
-                  "What are Kapeel's skills?"
+                  "What are Kapeel's technical skills?"
                 )
               }
             >
@@ -1626,11 +1603,11 @@ export default function KapeelChatbot() {
               disabled={isTyping}
               onClick={() =>
                 askQuickQuestion(
-                  "Tell me about his education"
+                  "Tell me about CRM Suite"
                 )
               }
             >
-              Education
+              CRM Suite
             </button>
 
             <button
@@ -1638,19 +1615,17 @@ export default function KapeelChatbot() {
               disabled={isTyping}
               onClick={() =>
                 askQuickQuestion(
-                  "Tell me about his achievements"
+                  "Tell me about his internship"
                 )
               }
             >
-              Achievements
+              Internship
             </button>
 
           </div>
 
 
-          {/* =================================================
-              INPUT
-          ================================================= */}
+          {/* INPUT */}
 
           <div className="kapeel-chat-input">
 
@@ -1668,9 +1643,7 @@ export default function KapeelChatbot() {
                   event.target.value
                 )
               }
-              onKeyDown={
-                handleKeyDown
-              }
+              onKeyDown={handleKeyDown}
               aria-label="Ask Kapeel AI"
             />
 
