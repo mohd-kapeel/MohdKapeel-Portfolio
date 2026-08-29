@@ -14,6 +14,7 @@ const navItems = [
 ]
 
 const rotatingRoles = [
+  "Full-Stack Developer",
   "Frontend Developer",
   "React.js Developer",
   "Next.js Developer",
@@ -302,10 +303,10 @@ const careerTracks = [
 const projects = [
   {
     title: 'AI Hire Pro',
-    label: 'AI Recruitment Platform',
+    label: 'AI-Powered Recruitment Platform',
     description:
-      'An AI-powered recruitment platform that helps recruiters screen candidates, analyze resumes, and streamline the hiring workflow.',
-    stack: ['React', 'Vite', 'JavaScript', 'CSS', 'AI'],
+      'A full-stack AI-powered recruitment platform that helps recruiters manage candidates, screen resumes, analyze profiles, and streamline the hiring workflow.',
+    stack: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'AI'],
     live: 'https://ai-hire-pro-demo-website.vercel.app/',
     code: 'https://github.com/mohd-kapeel/ai-hire-pro-demo-website',
     previewClass: 'project-preview-ai',
@@ -314,15 +315,16 @@ const projects = [
 
   {
     title: 'CRM Suite',
-    label: 'Customer Relationship Management',
+    label: 'Full-Stack CRM Platform',
     description:
-      'A modern web-based CRM platform built with React.js, TypeScript, Vite, and Supabase to manage leads, contacts, sales pipelines, customer activities, and team collaboration.',
+      'A full-stack CRM platform for managing customers, leads, contacts, sales workflows, and team activities with responsive dashboards and AI-assisted features.',
     stack: [
       'React.js',
-      'TypeScript',
-      'Vite',
-      'Supabase',
-      'REST APIs',
+      'Next.js',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'AI',
     ],
     live: 'https://crm-suite.vercel.app/#product',
     code: 'https://github.com/mohd-kapeel/crm-suite',
@@ -343,16 +345,16 @@ const projects = [
   },
 
   {
-  title: 'BolYaar',
-  label: 'Social Platform',
-  description:
-    'Built as a collaborative student social platform featuring anonymous posts, polls, and realtime interactions with Firebase integration.',
-  stack: ['Flutter', 'Dart', 'Firebase', 'Realtime', 'Android'],
-  live: '/apps/BolYaar.apk',
-  code: githubProfile,
-  previewClass: 'project-preview-social',
-  previewMode: 'bolyaar',
-},
+    title: 'BolYaar',
+    label: 'Social Platform',
+    description:
+      'Built as a collaborative student social platform featuring anonymous posts, polls, and realtime interactions with Firebase integration.',
+    stack: ['Flutter', 'Dart', 'Firebase', 'Realtime', 'Android'],
+    live: '/apps/BolYaar.apk',
+    code: githubProfile,
+    previewClass: 'project-preview-social',
+    previewMode: 'bolyaar',
+  },
 ]
 
 const experiences = [
