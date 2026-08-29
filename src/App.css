@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding: 18px 0 88px;
   color: #f8fbff;
+  box-sizing: border-box;
 }
 
 .page-aurora,
@@ -10236,5 +10237,54 @@ img {
 
   .project-card .bolyaar-preview-footer span {
     font-size: 6px !important;
+  }
+}
+
+/* Responsive fixes */
+@media (max-width: 860px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .projects-grid,
+  .education-grid,
+  .experience-grid,
+  .career-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-nav {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .portfolio-shell {
+    width: calc(100% - 20px);
+    padding-bottom: 50px;
+  }
+
+  .projects-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    padding-top: 24px;
+  }
+
+  .chatbot-window {
+    width: calc(100vw - 20px);
+    max-width: none;
+    height: 75dvh;
+  }
+}
+
+/* Disable mouse-only effects on touch devices */
+@media (hover: none) {
+  .page-cursor-glow {
+    display: none;
   }
 }

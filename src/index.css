@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+
 
 :root {
   color-scheme: dark;
@@ -81,4 +81,15 @@ img {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
 }
